@@ -28,7 +28,7 @@ class SettingScreen extends StatelessWidget {
         init: SettingController(),
         builder: (controller) {
           return Scaffold(
-            backgroundColor: AppColors.primary,
+            backgroundColor: Colors.green,
             body: controller.isLoading.value
                 ? Constant.loader()
                 : Column(
@@ -36,12 +36,12 @@ class SettingScreen extends StatelessWidget {
                       Container(
                         height: Responsive.width(10, context),
                         width: Responsive.width(100, context),
-                        color: AppColors.primary,
+                        color: Colors.green,
                       ),
                       Expanded(
                         child: Container(
                           decoration: BoxDecoration(
-                              color: Theme.of(context).colorScheme.background,
+                              color: Colors.white,
                               borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(25),
                                   topRight: Radius.circular(25))),
@@ -71,7 +71,7 @@ class SettingScreen extends StatelessWidget {
                                                 style: GoogleFonts.poppins(
                                                     color: themeChange.getThem()
                                                         ? Colors.black
-                                                        : Colors.white,
+                                                        : Colors.black,
                                                     fontWeight:
                                                         FontWeight.w500),
                                               ),
@@ -126,8 +126,7 @@ class SettingScreen extends StatelessWidget {
                                                               color: themeChange
                                                                       .getThem()
                                                                   ? Colors.black
-                                                                  : Colors
-                                                                      .white,
+                                                                  : Colors.black,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500)),
@@ -142,8 +141,7 @@ class SettingScreen extends StatelessWidget {
                                                               color: themeChange
                                                                       .getThem()
                                                                   ? Colors.black
-                                                                  : Colors
-                                                                      .white,
+                                                                  : Colors.black,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500)),
@@ -154,97 +152,96 @@ class SettingScreen extends StatelessWidget {
                                         ),
                                       ),
                                       const Divider(),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Row(
-                                          children: [
-                                            SvgPicture.asset(
-                                                'assets/icons/ic_light_drak.svg',
-                                                width: 24),
-                                            const SizedBox(
-                                              width: 20,
-                                            ),
-                                            Expanded(
-                                                child: Text("Light/dark mod".tr,
-                                                    style: GoogleFonts.poppins(
-                                                        color: themeChange
-                                                                .getThem()
-                                                            ? Colors.black
-                                                            : Colors.white,
-                                                        fontWeight:
-                                                            FontWeight.w500))),
-                                            SizedBox(
-                                              width:
-                                                  Responsive.width(26, context),
-                                              child: DropdownButtonFormField<
-                                                      String>(
-                                                  isExpanded: true,
-                                                  decoration:
-                                                      const InputDecoration(
-                                                    contentPadding:
-                                                        EdgeInsets.symmetric(
-                                                            vertical: 1),
-                                                    disabledBorder:
-                                                        InputBorder.none,
-                                                    focusedBorder:
-                                                        InputBorder.none,
-                                                    enabledBorder:
-                                                        InputBorder.none,
-                                                    errorBorder:
-                                                        InputBorder.none,
-                                                    border: InputBorder.none,
-                                                    isDense: true,
-                                                  ),
-                                                  validator: (value) =>
-                                                      value == null
-                                                          ? 'field required'
-                                                          : null,
-                                                  value: controller
-                                                          .selectedMode.isEmpty
-                                                      ? null
-                                                      : controller
-                                                          .selectedMode.value,
-                                                  onChanged: (value) {
-                                                    controller.selectedMode
-                                                        .value = value!;
-                                                    Preferences.setString(
-                                                        Preferences.themKey,
-                                                        value.toString());
-                                                    if (controller.selectedMode
-                                                            .value ==
-                                                        "Light mode") {
-                                                      themeChange.darkTheme = 0;
-                                                    } else if (controller
-                                                            .selectedMode
-                                                            .value ==
-                                                        "Dark mode") {
-                                                      themeChange.darkTheme = 1;
-                                                    } else {
-                                                      themeChange.darkTheme = 2;
-                                                    }
-                                                  },
-                                                  hint: Text("select".tr),
-                                                  items: controller.modeList
-                                                      .map((item) {
-                                                    return DropdownMenuItem(
-                                                      value: item,
-                                                      child: Text(
-                                                          item.toString(),
-                                                          style: GoogleFonts.poppins(
-                                                              color: themeChange
-                                                                      .getThem()
-                                                                  ? Colors.black
-                                                                  : Colors
-                                                                      .white,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500)),
-                                                    );
-                                                  }).toList()),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
+                                      // Padding(
+                                      //   padding: const EdgeInsets.all(8.0),
+                                      //   child: Row(
+                                      //     children: [
+                                      //       SvgPicture.asset(
+                                      //           'assets/icons/ic_light_drak.svg',
+                                      //           width: 24),
+                                      //       const SizedBox(
+                                      //         width: 20,
+                                      //       ),
+                                      //       // Expanded(
+                                      //       //     child: Text("Light/dark mod".tr,
+                                      //       //         style: GoogleFonts.poppins(
+                                      //       //             color: themeChange
+                                      //       //                     .getThem()
+                                      //       //                 ? Colors.black
+                                      //       //                 : Colors.black,
+                                      //       //             fontWeight:
+                                      //       //                 FontWeight.w500))),
+                                      //       // SizedBox(
+                                      //       //   width:
+                                      //       //       Responsive.width(26, context),
+                                      //       //   child: DropdownButtonFormField<
+                                      //       //           String>(
+                                      //       //       isExpanded: true,
+                                      //       //       decoration:
+                                      //       //           const InputDecoration(
+                                      //       //         contentPadding:
+                                      //       //             EdgeInsets.symmetric(
+                                      //       //                 vertical: 1),
+                                      //       //         disabledBorder:
+                                      //       //             InputBorder.none,
+                                      //       //         focusedBorder:
+                                      //       //             InputBorder.none,
+                                      //       //         enabledBorder:
+                                      //       //             InputBorder.none,
+                                      //       //         errorBorder:
+                                      //       //             InputBorder.none,
+                                      //       //         border: InputBorder.none,
+                                      //       //         isDense: true,
+                                      //       //       ),
+                                      //       //       validator: (value) =>
+                                      //       //           value == null
+                                      //       //               ? 'field required'
+                                      //       //               : null,
+                                      //       //       value: controller
+                                      //       //               .selectedMode.isEmpty
+                                      //       //           ? null
+                                      //       //           : controller
+                                      //       //               .selectedMode.value,
+                                      //       //       onChanged: (value) {
+                                      //       //         controller.selectedMode
+                                      //       //             .value = value!;
+                                      //       //         Preferences.setString(
+                                      //       //             Preferences.themKey,
+                                      //       //             value.toString());
+                                      //       //         if (controller.selectedMode
+                                      //       //                 .value ==
+                                      //       //             "Light mode") {
+                                      //       //           themeChange.darkTheme = 0;
+                                      //       //         } else if (controller
+                                      //       //                 .selectedMode
+                                      //       //                 .value ==
+                                      //       //             "Dark mode") {
+                                      //       //           themeChange.darkTheme = 1;
+                                      //       //         } else {
+                                      //       //           themeChange.darkTheme = 2;
+                                      //       //         }
+                                      //       //       },
+                                      //       //       hint: Text("select".tr),
+                                      //       //       items: controller.modeList
+                                      //       //           .map((item) {
+                                      //       //         return DropdownMenuItem(
+                                      //       //           value: item,
+                                      //       //           child: Text(
+                                      //       //               item.toString(),
+                                      //       //               style: GoogleFonts.poppins(
+                                      //       //                   color: themeChange
+                                      //       //                           .getThem()
+                                      //       //                       ? Colors.black
+                                      //       //                       : Colors.black,
+                                      //       //                   fontWeight:
+                                      //       //                       FontWeight
+                                      //       //                           .w500)),
+                                      //       //         );
+                                      //       //       }).toList()),
+                                      //       // ),
+                                      //     ],
+                                      //   ),
+                                      // ),
                                       const Divider(),
                                       Padding(
                                         padding: const EdgeInsets.all(8.0),
@@ -271,7 +268,7 @@ class SettingScreen extends StatelessWidget {
                                                       color:
                                                           themeChange.getThem()
                                                               ? Colors.black
-                                                              : Colors.white,
+                                                              : Colors.black,
                                                       fontWeight:
                                                           FontWeight.w500)),
                                             ],
@@ -298,7 +295,7 @@ class SettingScreen extends StatelessWidget {
                                                       color:
                                                           themeChange.getThem()
                                                               ? Colors.black
-                                                              : Colors.white,
+                                                              : Colors.black,
                                                       fontWeight:
                                                           FontWeight.w500))
                                             ],

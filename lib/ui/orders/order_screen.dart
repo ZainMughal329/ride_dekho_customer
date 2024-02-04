@@ -34,18 +34,18 @@ class OrderScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeChange = Provider.of<DarkThemeProvider>(context);
     return Scaffold(
-      backgroundColor: AppColors.primary,
+      backgroundColor: Colors.green,
       body: Column(
         children: [
           Container(
             height: Responsive.width(10, context),
             width: Responsive.width(100, context),
-            color: AppColors.primary,
+            color: Colors.green,
           ),
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.background,
+                  color: Colors.white,
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(25),
                       topRight: Radius.circular(25))),
@@ -55,11 +55,13 @@ class OrderScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 10),
                   child: DefaultTabController(
                     length: 3,
+
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TabBar(
-                          indicatorColor: AppColors.darkModePrimary,
+                          dividerColor: Colors.white,
+                          indicatorColor: Colors.green,
                           tabs: [
                             Tab(
                                 child: Text(
@@ -68,7 +70,7 @@ class OrderScreen extends StatelessWidget {
                               style: GoogleFonts.poppins(
                                 color: themeChange.getThem()
                                     ? Colors.black
-                                    : Colors.white,
+                                    : Colors.black,
                               ),
                             )),
                             Tab(
@@ -78,7 +80,7 @@ class OrderScreen extends StatelessWidget {
                               style: GoogleFonts.poppins(
                                 color: themeChange.getThem()
                                     ? Colors.black
-                                    : Colors.white,
+                                    : Colors.black,
                               ),
                             )),
                             Tab(
@@ -88,7 +90,7 @@ class OrderScreen extends StatelessWidget {
                               style: GoogleFonts.poppins(
                                 color: themeChange.getThem()
                                     ? Colors.black
-                                    : Colors.white,
+                                    : Colors.black,
                               ),
                             )),
                           ],
@@ -180,7 +182,7 @@ class OrderScreen extends StatelessWidget {
                                                         ? AppColors
                                                             .darkContainerBackground
                                                         : AppColors
-                                                            .containerBackground,
+                                                        .darkContainerBackground,
                                                     borderRadius:
                                                         const BorderRadius.all(
                                                             Radius.circular(
@@ -191,23 +193,12 @@ class OrderScreen extends StatelessWidget {
                                                             ? AppColors
                                                                 .darkContainerBorder
                                                             : AppColors
-                                                                .containerBorder,
+                                                            .darkContainerBorder,
                                                         width: 0.5),
                                                     boxShadow:
                                                         themeChange.getThem()
                                                             ? null
-                                                            : [
-                                                                BoxShadow(
-                                                                  color: Colors
-                                                                      .black
-                                                                      .withOpacity(
-                                                                          0.10),
-                                                                  blurRadius: 5,
-                                                                  offset: const Offset(
-                                                                      0,
-                                                                      4), // changes position of shadow
-                                                                ),
-                                                              ],
+                                                            : null,
                                                   ),
                                                   child: Padding(
                                                     padding:
@@ -305,7 +296,7 @@ class OrderScreen extends StatelessWidget {
                                                                         ? AppColors
                                                                             .darkGray
                                                                         : AppColors
-                                                                            .gray,
+                                                                        .darkGray,
                                                                     borderRadius:
                                                                         const BorderRadius
                                                                             .all(
@@ -360,7 +351,7 @@ class OrderScreen extends StatelessWidget {
                                                                     ? AppColors
                                                                         .darkGray
                                                                     : AppColors
-                                                                        .gray,
+                                                                    .darkGray,
                                                                 borderRadius:
                                                                     const BorderRadius
                                                                         .all(
@@ -476,14 +467,14 @@ class OrderScreen extends StatelessWidget {
                                                                       decoration: BoxDecoration(
                                                                           color: themeChange.getThem()
                                                                               ? AppColors.darkModePrimary
-                                                                              : AppColors.primary,
+                                                                              : AppColors.darkModePrimary,
                                                                           borderRadius: BorderRadius.circular(5)),
                                                                       child: Icon(
                                                                           Icons
                                                                               .chat,
                                                                           color: themeChange.getThem()
                                                                               ? Colors.black
-                                                                              : Colors.white),
+                                                                              : Colors.black),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -510,14 +501,14 @@ class OrderScreen extends StatelessWidget {
                                                                       decoration: BoxDecoration(
                                                                           color: themeChange.getThem()
                                                                               ? AppColors.darkModePrimary
-                                                                              : AppColors.primary,
+                                                                              : AppColors.darkModePrimary,
                                                                           borderRadius: BorderRadius.circular(5)),
                                                                       child: Icon(
                                                                           Icons
                                                                               .call,
                                                                           color: themeChange.getThem()
                                                                               ? Colors.black
-                                                                              : Colors.white),
+                                                                              : Colors.black),
                                                                     ),
                                                                   ),
                                                                 )
@@ -647,7 +638,7 @@ class OrderScreen extends StatelessWidget {
                                                       ? AppColors
                                                           .darkContainerBackground
                                                       : AppColors
-                                                          .containerBackground,
+                                                      .darkContainerBackground,
                                                   borderRadius:
                                                       const BorderRadius.all(
                                                           Radius.circular(10)),
@@ -657,22 +648,12 @@ class OrderScreen extends StatelessWidget {
                                                           ? AppColors
                                                               .darkContainerBorder
                                                           : AppColors
-                                                              .containerBorder,
+                                                          .darkContainerBorder,
                                                       width: 0.5),
                                                   boxShadow: themeChange
                                                           .getThem()
                                                       ? null
-                                                      : [
-                                                          BoxShadow(
-                                                            color: Colors.black
-                                                                .withOpacity(
-                                                                    0.10),
-                                                            blurRadius: 5,
-                                                            offset: const Offset(
-                                                                0,
-                                                                4), // changes position of shadow
-                                                          ),
-                                                        ],
+                                                      : null,
                                                 ),
                                                 child: InkWell(
                                                     onTap: () {
@@ -748,7 +729,7 @@ class OrderScreen extends StatelessWidget {
                                                                       ? AppColors
                                                                           .darkGray
                                                                       : AppColors
-                                                                          .gray,
+                                                                      .darkGray,
                                                                   borderRadius:
                                                                       const BorderRadius
                                                                           .all(
@@ -851,7 +832,7 @@ class OrderScreen extends StatelessWidget {
                                                       ? AppColors
                                                           .darkContainerBackground
                                                       : AppColors
-                                                          .containerBackground,
+                                                      .darkContainerBackground,
                                                   borderRadius:
                                                       const BorderRadius.all(
                                                           Radius.circular(10)),
@@ -861,22 +842,12 @@ class OrderScreen extends StatelessWidget {
                                                           ? AppColors
                                                               .darkContainerBorder
                                                           : AppColors
-                                                              .containerBorder,
+                                                          .darkContainerBorder,
                                                       width: 0.5),
                                                   boxShadow: themeChange
                                                           .getThem()
                                                       ? null
-                                                      : [
-                                                          BoxShadow(
-                                                            color: Colors.black
-                                                                .withOpacity(
-                                                                    0.10),
-                                                            blurRadius: 5,
-                                                            offset: const Offset(
-                                                                0,
-                                                                4), // changes position of shadow
-                                                          ),
-                                                        ],
+                                                      : null,
                                                 ),
                                                 child: Padding(
                                                   padding: const EdgeInsets.all(
@@ -945,7 +916,7 @@ class OrderScreen extends StatelessWidget {
                                                                   ? AppColors
                                                                       .darkGray
                                                                   : AppColors
-                                                                      .gray,
+                                                                  .darkGray,
                                                               borderRadius:
                                                                   const BorderRadius
                                                                       .all(

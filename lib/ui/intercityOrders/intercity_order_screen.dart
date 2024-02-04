@@ -35,17 +35,17 @@ class InterCityOrderScreen extends StatelessWidget {
     final themeChange = Provider.of<DarkThemeProvider>(context);
 
     return Scaffold(
-      backgroundColor: AppColors.primary,
+      backgroundColor: Colors.green,
       body: Column(
         children: [
           Container(
             height: Responsive.width(8, context),
             width: Responsive.width(100, context),
-            color: AppColors.primary,
+            color: Colors.green,
           ),
           Expanded(
             child: Container(
-              decoration: BoxDecoration(color: Theme.of(context).colorScheme.background, borderRadius: const BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25))),
+              decoration: BoxDecoration(color: Colors.white, borderRadius: const BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25))),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Padding(
@@ -56,14 +56,15 @@ class InterCityOrderScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         TabBar(
-                          indicatorColor: AppColors.darkModePrimary,
+                          dividerColor: Colors.white,
+                          indicatorColor: Colors.green,
                           tabs: [
                             Tab(
                                 child: Text(
                               "Active Rides".tr,
                               textAlign: TextAlign.center,
                               style: GoogleFonts.poppins(
-                                color:themeChange.getThem()?Colors.black:Colors.white,
+                                color:themeChange.getThem()?Colors.black:Colors.black,
                               ),
                             )),
                             Tab(
@@ -71,7 +72,7 @@ class InterCityOrderScreen extends StatelessWidget {
                               "Completed Rides".tr,
                               textAlign: TextAlign.center,
                               style: GoogleFonts.poppins(
-                                color:themeChange.getThem()?Colors.black:Colors.white,
+                                color:themeChange.getThem()?Colors.black:Colors.black,
                               ),
                             )),
                             Tab(
@@ -79,7 +80,7 @@ class InterCityOrderScreen extends StatelessWidget {
                               "Canceled Rides".tr,
                               textAlign: TextAlign.center,
                               style: GoogleFonts.poppins(
-                                color:themeChange.getThem()?Colors.black:Colors.white,
+                                color:themeChange.getThem()?Colors.black:Colors.black,
                               ),
                             )),
                           ],
@@ -132,18 +133,12 @@ class InterCityOrderScreen extends StatelessWidget {
                                                 padding: const EdgeInsets.all(10),
                                                 child: Container(
                                                   decoration: BoxDecoration(
-                                                    color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                                    color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.darkContainerBackground,
                                                     borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                    border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
+                                                    border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.darkContainerBorder, width: 0.5),
                                                     boxShadow: themeChange.getThem()
                                                         ? null
-                                                        : [
-                                                            BoxShadow(
-                                                              color: Colors.black.withOpacity(0.10),
-                                                              blurRadius: 5,
-                                                              offset: const Offset(0, 4), // changes position of shadow
-                                                            ),
-                                                          ],
+                                                        : null,
                                                   ),
                                                   child: Padding(
                                                     padding: const EdgeInsets.all(10.0),
@@ -196,7 +191,7 @@ class InterCityOrderScreen extends StatelessWidget {
                                                               width: 10,
                                                             ),
                                                             Container(
-                                                              decoration: BoxDecoration(color: AppColors.primary.withOpacity(0.30), borderRadius: const BorderRadius.all(Radius.circular(5))),
+                                                              decoration: BoxDecoration(color: Colors.green.withOpacity(0.30), borderRadius: const BorderRadius.all(Radius.circular(5))),
                                                               child: Padding(
                                                                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                                                                 child: Text(orderModel.intercityService!.name.toString()),
@@ -217,7 +212,7 @@ class InterCityOrderScreen extends StatelessWidget {
                                                         orderModel.someOneElse != null
                                                             ? Container(
                                                           decoration: BoxDecoration(
-                                                              color: themeChange.getThem() ? AppColors.darkGray : AppColors.gray, borderRadius: const BorderRadius.all(Radius.circular(10))),
+                                                              color: themeChange.getThem() ? AppColors.darkGray : AppColors.darkGray, borderRadius: const BorderRadius.all(Radius.circular(10))),
                                                           child: Padding(
                                                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                                                               child: Row(
@@ -247,7 +242,7 @@ class InterCityOrderScreen extends StatelessWidget {
                                                           padding: const EdgeInsets.symmetric(vertical: 14),
                                                           child: Container(
                                                             decoration: BoxDecoration(
-                                                                color: themeChange.getThem() ? AppColors.darkGray : AppColors.gray, borderRadius: const BorderRadius.all(Radius.circular(10))),
+                                                                color: themeChange.getThem() ? AppColors.darkGray : AppColors.darkGray, borderRadius: const BorderRadius.all(Radius.circular(10))),
                                                             child: Padding(
                                                                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                                                                 child: Row(
@@ -262,11 +257,11 @@ class InterCityOrderScreen extends StatelessWidget {
                                                                           : Row(
                                                                               children: [
                                                                                 Text("OTP".tr, style: GoogleFonts.poppins()),
-                                                                                Text(" : ${orderModel.otp}", style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 12)),
+                                                                                Text(" : ${orderModel.otp}", style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 12,color: Colors.black)),
                                                                               ],
                                                                             ),
                                                                     ),
-                                                                    Text(Constant().formatTimestamp(orderModel.createdDate), style: GoogleFonts.poppins(fontSize: 12)),
+                                                                    Text(Constant().formatTimestamp(orderModel.createdDate), style: GoogleFonts.poppins(fontSize: 12,color: Colors.black)),
                                                                   ],
                                                                 )),
                                                           ),
@@ -308,8 +303,8 @@ class InterCityOrderScreen extends StatelessWidget {
                                                                     child: Container(
                                                                       height: 44,
                                                                       decoration: BoxDecoration(
-                                                                          color: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary, borderRadius: BorderRadius.circular(5)),
-                                                                      child: Icon(Icons.chat, color: themeChange.getThem() ? Colors.black : Colors.white),
+                                                                          color: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.darkModePrimary, borderRadius: BorderRadius.circular(5)),
+                                                                      child: Icon(Icons.chat, color: themeChange.getThem() ? Colors.black : Colors.black),
                                                                     ),
                                                                   ),
                                                                 ),
@@ -325,8 +320,8 @@ class InterCityOrderScreen extends StatelessWidget {
                                                                     child: Container(
                                                                       height: 44,
                                                                       decoration: BoxDecoration(
-                                                                          color: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.primary, borderRadius: BorderRadius.circular(5)),
-                                                                      child: Icon(Icons.call, color: themeChange.getThem() ? Colors.black : Colors.white),
+                                                                          color: themeChange.getThem() ? AppColors.darkModePrimary : AppColors.darkModePrimary, borderRadius: BorderRadius.circular(5)),
+                                                                      child: Icon(Icons.call, color: themeChange.getThem() ? Colors.black : Colors.black),
                                                                     ),
                                                                   ),
                                                                 )
@@ -408,18 +403,12 @@ class InterCityOrderScreen extends StatelessWidget {
                                               padding: const EdgeInsets.all(10),
                                               child: Container(
                                                 decoration: BoxDecoration(
-                                                  color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                                  color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.darkContainerBackground,
                                                   borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                  border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
+                                                  border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.darkContainerBorder, width: 0.5),
                                                   boxShadow: themeChange.getThem()
                                                       ? null
-                                                      : [
-                                                          BoxShadow(
-                                                            color: Colors.black.withOpacity(0.10),
-                                                            blurRadius: 5,
-                                                            offset: const Offset(0, 4), // changes position of shadow
-                                                          ),
-                                                        ],
+                                                      : null,
                                                 ),
                                                 child: InkWell(
                                                     onTap: () {
@@ -458,7 +447,7 @@ class InterCityOrderScreen extends StatelessWidget {
                                                                 width: 10,
                                                               ),
                                                               Container(
-                                                                decoration: BoxDecoration(color: AppColors.primary.withOpacity(0.30), borderRadius: const BorderRadius.all(Radius.circular(5))),
+                                                                decoration: BoxDecoration(color: Colors.green.withOpacity(0.30), borderRadius: const BorderRadius.all(Radius.circular(5))),
                                                                 child: Padding(
                                                                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                                                                   child: Text(orderModel.intercityService!.name.toString()),
@@ -478,7 +467,7 @@ class InterCityOrderScreen extends StatelessWidget {
                                                           ),
                                                           Container(
                                                             decoration: BoxDecoration(
-                                                                color: themeChange.getThem() ? AppColors.darkGray : AppColors.gray, borderRadius: const BorderRadius.all(Radius.circular(10))),
+                                                                color: themeChange.getThem() ? AppColors.darkGray : AppColors.darkGray, borderRadius: const BorderRadius.all(Radius.circular(10))),
                                                             child: Padding(
                                                                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                                                                 child: Center(
@@ -549,18 +538,12 @@ class InterCityOrderScreen extends StatelessWidget {
                                               padding: const EdgeInsets.all(10),
                                               child: Container(
                                                 decoration: BoxDecoration(
-                                                  color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                                  color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.darkContainerBackground,
                                                   borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                  border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
+                                                  border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.darkContainerBorder, width: 0.5),
                                                   boxShadow: themeChange.getThem()
                                                       ? null
-                                                      : [
-                                                          BoxShadow(
-                                                            color: Colors.black.withOpacity(0.10),
-                                                            blurRadius: 5,
-                                                            offset: const Offset(0, 4), // changes position of shadow
-                                                          ),
-                                                        ],
+                                                      : null,
                                                 ),
                                                 child: Padding(
                                                   padding: const EdgeInsets.all(12.0),
@@ -600,7 +583,7 @@ class InterCityOrderScreen extends StatelessWidget {
                                                             width: 10,
                                                           ),
                                                           Container(
-                                                            decoration: BoxDecoration(color: AppColors.primary.withOpacity(0.30), borderRadius: const BorderRadius.all(Radius.circular(5))),
+                                                            decoration: BoxDecoration(color: Colors.green.withOpacity(0.30), borderRadius: const BorderRadius.all(Radius.circular(5))),
                                                             child: Padding(
                                                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                                                               child: Text(orderModel.intercityService!.name.toString()),
@@ -619,7 +602,7 @@ class InterCityOrderScreen extends StatelessWidget {
                                                         padding: const EdgeInsets.symmetric(vertical: 14),
                                                         child: Container(
                                                           decoration: BoxDecoration(
-                                                              color: themeChange.getThem() ? AppColors.darkGray : AppColors.gray, borderRadius: const BorderRadius.all(Radius.circular(10))),
+                                                              color: themeChange.getThem() ? AppColors.darkGray : AppColors.darkGray, borderRadius: const BorderRadius.all(Radius.circular(10))),
                                                           child: Padding(
                                                               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                                                               child: Row(

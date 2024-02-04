@@ -20,10 +20,14 @@ class ReferralScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeChange = Provider.of<DarkThemeProvider>(context);
+    print("aklsflsdkjflsd");
+    print(themeChange.getThem());
+    // print("sjdlkfjsalfjasdl;kfjsad"+themeChange..toString());
     return GetX<ReferralController>(
         init: ReferralController(),
         builder: (controller) {
           return Scaffold(
+            backgroundColor: Colors.white,
             body: controller.isLoading.value
                 ? Constant.loader()
                 : Column(
@@ -48,7 +52,7 @@ class ReferralScreen extends StatelessWidget {
                         offset: const Offset(0, -30),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: themeChange.getThem() ? AppColors.darkInvite : AppColors.background,
+                            color: Colors.white,
                             borderRadius: const BorderRadius.all(Radius.circular(10)),
                           ),
                           child: Padding(
@@ -57,12 +61,12 @@ class ReferralScreen extends StatelessWidget {
                               children: [
                                 Text(
                                   "Invite Friend & Businesses".tr,
-                                  style: GoogleFonts.poppins(color: themeChange.getThem() ? Colors.white : Colors.black),
+                                  style: GoogleFonts.poppins(color: Colors.black),
                                 ),
                                 Text(
                                   "Earn ${Constant.amountShow(amount: Constant.referralAmount.toString())} each".tr,
                                   textAlign: TextAlign.center,
-                                  style: GoogleFonts.poppins(fontWeight: FontWeight.w600, color: themeChange.getThem() ? Colors.white : Colors.black, fontSize: 22),
+                                  style: GoogleFonts.poppins(fontWeight: FontWeight.w600, color: Colors.black, fontSize: 22),
                                 ),
                               ],
                             ),
@@ -84,14 +88,15 @@ class ReferralScreen extends StatelessWidget {
                                   children: [
                                     Text(
                                       "Invite Friend & Businesses".tr,
-                                      style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 20),
+                                      style: GoogleFonts.poppins(fontWeight: FontWeight.w600, fontSize: 20,color :Colors.black
+                                      ),
                                     ),
                                     const SizedBox(
                                       height: 5,
                                     ),
                                     Text(
                                       "Invite GoRide to sign up using your link and you’ll get ${Constant.amountShow(amount: Constant.referralAmount.toString())}  ".tr,
-                                      style: GoogleFonts.poppins(fontWeight: FontWeight.w200),
+                                      style: GoogleFonts.poppins(fontWeight: FontWeight.w200,color :Colors.black),
                                     ),
                                     const SizedBox(
                                       height: 30,
@@ -116,7 +121,9 @@ class ReferralScreen extends StatelessWidget {
                                                 controller.referralModel.value.referralCode.toString(),
                                                 style: GoogleFonts.poppins(fontWeight: FontWeight.w700),
                                               )),
-                                              Text("Tap to Copy".tr, style: GoogleFonts.poppins(fontWeight: FontWeight.w200))
+                                              Text("Tap to Copy".tr, style: GoogleFonts.poppins(fontWeight: FontWeight.w200,
+                                              color: Colors.black
+                                              ))
                                             ],
                                           ),
                                         ),
@@ -129,21 +136,20 @@ class ReferralScreen extends StatelessWidget {
                                       children: [
                                         Container(
                                           decoration: BoxDecoration(
-                                            color: themeChange.getThem() ? AppColors.darkInvite : AppColors.background,
+                                            color: AppColors.background,
                                             borderRadius: BorderRadius.circular(40),
-                                            boxShadow: themeChange.getThem()
-                                                ? null
-                                                : [
-                                                    BoxShadow(
-                                                      color: Colors.black.withOpacity(0.10),
-                                                      blurRadius: 5,
-                                                      offset: const Offset(0, 4), // changes position of shadow
-                                                    ),
-                                                  ],
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.black.withOpacity(0.10),
+                                                blurRadius: 5,
+                                                offset: const Offset(0, 4), // changes position of shadow
+                                              ),
+                                            ],
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(10.0),
-                                            child: SvgPicture.asset('assets/icons/ic_invite.svg', width: 22, color: themeChange.getThem() ? Colors.white : Colors.black),
+                                            child: SvgPicture.asset('assets/icons/ic_invite.svg', width: 22,
+                                                color:  Colors.black ),
                                           ),
                                         ),
                                         const SizedBox(
@@ -159,21 +165,19 @@ class ReferralScreen extends StatelessWidget {
                                       children: [
                                         Container(
                                           decoration: BoxDecoration(
-                                            color: themeChange.getThem() ? AppColors.darkInvite : AppColors.background,
+                                            color: AppColors.background,
                                             borderRadius: BorderRadius.circular(40),
-                                            boxShadow: themeChange.getThem()
-                                                ? null
-                                                : [
-                                                    BoxShadow(
-                                                      color: Colors.black.withOpacity(0.10),
-                                                      blurRadius: 5,
-                                                      offset: const Offset(0, 4), // changes position of shadow
-                                                    ),
-                                                  ],
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.black.withOpacity(0.10),
+                                                blurRadius: 5,
+                                                offset: const Offset(0, 4), // changes position of shadow
+                                              ),
+                                            ],
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(10.0),
-                                            child: SvgPicture.asset('assets/icons/ic_register.svg', width: 22, color: themeChange.getThem() ? Colors.white : Colors.black),
+                                            child: SvgPicture.asset('assets/icons/ic_register.svg', width: 22, color: Colors.black),
                                           ),
                                         ),
                                         const SizedBox(
@@ -189,21 +193,19 @@ class ReferralScreen extends StatelessWidget {
                                       children: [
                                         Container(
                                           decoration: BoxDecoration(
-                                            color: themeChange.getThem() ? AppColors.darkInvite : AppColors.background,
+                                            color: AppColors.background,
                                             borderRadius: BorderRadius.circular(40),
-                                            boxShadow: themeChange.getThem()
-                                                ? null
-                                                : [
-                                                    BoxShadow(
-                                                      color: Colors.black.withOpacity(0.10),
-                                                      blurRadius: 5,
-                                                      offset: const Offset(0, 4), // changes position of shadow
-                                                    ),
-                                                  ],
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.black.withOpacity(0.10),
+                                                blurRadius: 5,
+                                                offset: const Offset(0, 4), // changes position of shadow
+                                              ),
+                                            ],
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(10.0),
-                                            child: SvgPicture.asset('assets/icons/ic_invite.svg', width: 22, color: themeChange.getThem() ? Colors.white : Colors.black),
+                                            child: SvgPicture.asset('assets/icons/ic_invite.svg', width: 22, color:Colors.black),
                                           ),
                                         ),
                                         const SizedBox(

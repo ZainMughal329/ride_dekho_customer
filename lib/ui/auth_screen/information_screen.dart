@@ -22,7 +22,7 @@ class InformationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
+    // final themeChange = Provider.of<DarkThemeProvider>(context);
 
     return GetX<InformationController>(
         init: InformationController(),
@@ -43,9 +43,7 @@ class InformationScreen extends StatelessWidget {
                           padding: EdgeInsets.only(top: 10),
                           child: Text("Sign up".tr,
                               style: GoogleFonts.poppins(
-                                  color: themeChange.getThem()
-                                      ? Colors.black
-                                      : Colors.white,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 18)),
                         ),
@@ -54,9 +52,7 @@ class InformationScreen extends StatelessWidget {
                           child: Text(
                               "Create your account to start using GoRide".tr,
                               style: GoogleFonts.poppins(
-                                  color: themeChange.getThem()
-                                      ? Colors.black
-                                      : Colors.white,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.w400)),
                         ),
                         const SizedBox(
@@ -83,25 +79,21 @@ class InformationScreen extends StatelessWidget {
                                 : true,
                             decoration: InputDecoration(
                                 isDense: true,
-                                filled: true,
-                                fillColor: themeChange.getThem()
-                                    ? AppColors.textField
-                                    : AppColors.darkTextField,
+                                // filled: true,
+                                // fillColor: themeChange.getThem()
+                                //     ? AppColors.textField
+                                //     : AppColors.darkTextField,
                                 contentPadding:
                                     const EdgeInsets.symmetric(vertical: 12),
                                 prefixIcon: CountryCodePicker(
                                   textStyle: TextStyle(
-                                    color: themeChange.getThem()
-                                        ? Colors.black
-                                        : Colors.white,
+                                     color: Colors.black
                                   ),
                                   onChanged: (value) {
                                     controller.countryCode.value =
                                         value.dialCode.toString();
                                   },
-                                  dialogBackgroundColor: themeChange.getThem()
-                                      ? AppColors.darkBackground
-                                      : AppColors.background,
+                                  dialogBackgroundColor: Colors.white,
                                   initialSelection:
                                       controller.countryCode.value,
                                   comparator: (a, b) =>
@@ -115,45 +107,35 @@ class InformationScreen extends StatelessWidget {
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(4)),
                                   borderSide: BorderSide(
-                                      color: themeChange.getThem()
-                                          ? AppColors.darkTextFieldBorder
-                                          : AppColors.textFieldBorder,
+                                     color: Colors.black,
                                       width: 1),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(4)),
                                   borderSide: BorderSide(
-                                      color: themeChange.getThem()
-                                          ? AppColors.darkTextFieldBorder
-                                          : AppColors.textFieldBorder,
+                                      color: Colors.black,
                                       width: 1),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(4)),
                                   borderSide: BorderSide(
-                                      color: themeChange.getThem()
-                                          ? AppColors.darkTextFieldBorder
-                                          : AppColors.textFieldBorder,
+                                      color: Colors.black,
                                       width: 1),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(4)),
                                   borderSide: BorderSide(
-                                      color: themeChange.getThem()
-                                          ? AppColors.darkTextFieldBorder
-                                          : AppColors.textFieldBorder,
+                                      color: Colors.black,
                                       width: 1),
                                 ),
                                 border: OutlineInputBorder(
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(4)),
                                   borderSide: BorderSide(
-                                      color: themeChange.getThem()
-                                          ? AppColors.darkTextFieldBorder
-                                          : AppColors.textFieldBorder,
+                                      color: Colors.black,
                                       width: 1),
                                 ),
                                 hintText: "Phone number".tr)),

@@ -33,7 +33,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
         builder: (controller) {
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: AppColors.primary,
+              backgroundColor: Colors.white,
               title: controller.selectedDrawerIndex.value != 0 &&
                       controller.selectedDrawerIndex.value != 6
                   ? Text(
@@ -41,7 +41,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                           .drawerItems[controller.selectedDrawerIndex.value]
                           .title,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                     )
                   : const Text(""),
@@ -53,7 +53,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                   child: Padding(
                     padding: const EdgeInsets.only(
                         left: 10, right: 20, top: 20, bottom: 20),
-                    child: SvgPicture.asset('assets/icons/ic_humber.svg'),
+                    child: SvgPicture.asset('assets/icons/ic_humber.svg',color: Colors.black,),
                   ),
                 );
               }),
@@ -111,7 +111,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   }
 
   buildAppDrawer(BuildContext context, DashBoardController controller) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
+    // final themeChange = Provider.of<DarkThemeProvider>(context);
 
     var drawerOptions = <Widget>[];
     for (var i = 0; i < controller.drawerItems.length; i++) {
@@ -125,7 +125,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           child: Container(
             decoration: BoxDecoration(
                 color: i == controller.selectedDrawerIndex.value
-                    ? Theme.of(context).colorScheme.primary
+                    ? Colors.green
                     : Colors.transparent,
                 borderRadius: const BorderRadius.all(Radius.circular(10))),
             padding: const EdgeInsets.all(12),
@@ -135,12 +135,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                   d.icon,
                   width: 20,
                   color: i == controller.selectedDrawerIndex.value
-                      ? themeChange.getThem()
-                          ? Colors.white
-                          : Colors.black
-                      : themeChange.getThem()
-                          ? Colors.black
-                          : Colors.white,
+                      ? Colors.white
+                      :  Colors.green,
                 ),
                 const SizedBox(
                   width: 20,
@@ -149,12 +145,8 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                   d.title,
                   style: GoogleFonts.poppins(
                       color: i == controller.selectedDrawerIndex.value
-                          ? themeChange.getThem()
-                              ? Colors.white
-                              : Colors.black
-                          : themeChange.getThem()
-                              ? Colors.black
-                              : Colors.white,
+                          ? Colors.white
+                          :  Colors.black,
                       fontWeight: FontWeight.w500),
                 )
               ],
@@ -164,7 +156,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
       ));
     }
     return Drawer(
-      backgroundColor: Theme.of(context).colorScheme.background,
+      backgroundColor: Colors.white,
       child: ListView(
         children: [
           DrawerHeader(
@@ -196,23 +188,17 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
                                     Image.network(Constant.userPlaceHolder),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 10),
-                              child: Text(driverModel.fullName.toString(),
-                                  style: GoogleFonts.poppins(
-                                      color: themeChange.getThem()
-                                          ? Colors.black
-                                          : Colors.white,
-                                      fontWeight: FontWeight.w500)),
-                            ),
+                            Text(driverModel.fullName.toString(),
+                                style: GoogleFonts.poppins(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.w500)),
                             Padding(
                               padding: const EdgeInsets.only(top: 2),
                               child: Text(
                                 driverModel.email.toString(),
                                 style: GoogleFonts.poppins(
-                                  color: themeChange.getThem()
-                                      ? Colors.black
-                                      : Colors.white,
+                                  color: Colors.black
+                                     ,
                                 ),
                               ),
                             )

@@ -30,9 +30,9 @@ class InterCityAcceptOrderScreen extends StatelessWidget {
         init: InterCityAcceptOrderController(),
         builder: (controller) {
           return Scaffold(
-            backgroundColor: AppColors.primary,
+            backgroundColor: Colors.green,
             appBar: AppBar(
-              backgroundColor: AppColors.primary,
+              backgroundColor: Colors.white,
               title:  Text("OutStation ride details".tr),
               leading: InkWell(
                   onTap: () {
@@ -51,7 +51,7 @@ class InterCityAcceptOrderScreen extends StatelessWidget {
                 Expanded(
                   child: Container(
                     decoration:
-                        BoxDecoration(color: themeChange.getThem() ? AppColors.darkGray : AppColors.gray, borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25))),
+                        BoxDecoration(color: themeChange.getThem() ? AppColors.darkGray : AppColors.darkGray, borderRadius: BorderRadius.only(topLeft: Radius.circular(25), topRight: Radius.circular(25))),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: Padding(
@@ -103,7 +103,7 @@ class InterCityAcceptOrderScreen extends StatelessWidget {
                                       ),
                                       Container(
                                         decoration:
-                                            BoxDecoration(color: themeChange.getThem() ? AppColors.darkContainerBorder : Colors.white, borderRadius: const BorderRadius.all(Radius.circular(10))),
+                                            BoxDecoration(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.darkContainerBorder, borderRadius: const BorderRadius.all(Radius.circular(10))),
                                         child: Padding(
                                             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 14),
                                             child: Row(
@@ -177,18 +177,12 @@ class InterCityAcceptOrderScreen extends StatelessWidget {
                                                                       padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
                                                                       child: Container(
                                                                         decoration: BoxDecoration(
-                                                                          color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                                                          color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.darkContainerBackground,
                                                                           borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                                          border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
+                                                                          border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.darkContainerBorder, width: 0.5),
                                                                           boxShadow: themeChange.getThem()
                                                                               ? null
-                                                                              : [
-                                                                                  BoxShadow(
-                                                                                    color: Colors.black.withOpacity(0.10),
-                                                                                    blurRadius: 5,
-                                                                                    offset: const Offset(0, 4), // changes position of shadow
-                                                                                  ),
-                                                                                ],
+                                                                              : null,
                                                                         ),
                                                                         child: Column(
                                                                           children: [
@@ -200,7 +194,7 @@ class InterCityAcceptOrderScreen extends StatelessWidget {
                                                                               height: 10,
                                                                             ),
                                                                             Container(
-                                                                              decoration: BoxDecoration(color: themeChange.getThem() ? AppColors.darkGray : AppColors.gray),
+                                                                              decoration: BoxDecoration(color: themeChange.getThem() ? AppColors.darkGray : AppColors.darkGray),
                                                                               child: Padding(
                                                                                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                                                                                   child: Row(
@@ -212,7 +206,7 @@ class InterCityAcceptOrderScreen extends StatelessWidget {
                                                                                           SvgPicture.asset(
                                                                                             'assets/icons/ic_car.svg',
                                                                                             width: 18,
-                                                                                            color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                                            color: themeChange.getThem() ? Colors.white : Colors.white,
                                                                                           ),
                                                                                           const SizedBox(
                                                                                             width: 10,
@@ -228,7 +222,7 @@ class InterCityAcceptOrderScreen extends StatelessWidget {
                                                                                           SvgPicture.asset(
                                                                                             'assets/icons/ic_color.svg',
                                                                                             width: 18,
-                                                                                            color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                                            color: themeChange.getThem() ? Colors.white : Colors.white,
                                                                                           ),
                                                                                           const SizedBox(
                                                                                             width: 10,
@@ -244,7 +238,7 @@ class InterCityAcceptOrderScreen extends StatelessWidget {
                                                                                           Image.asset(
                                                                                             'assets/icons/ic_number.png',
                                                                                             width: 18,
-                                                                                            color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                                            color: themeChange.getThem() ? Colors.white : Colors.white,
                                                                                           ),
                                                                                           const SizedBox(
                                                                                             width: 10,
