@@ -18,7 +18,7 @@ class ButtonThem {
     required Function() onPress,
     bool isVisible = true,
   }) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
+    // final themeChange = Provider.of<DarkThemeProvider>(context);
 
     return Visibility(
       visible: isVisible,
@@ -31,9 +31,7 @@ class ButtonThem {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(btnRadius),
           ),
-          color: themeChange.getThem()
-              ? AppColors.primary
-              : AppColors.darkModePrimary,
+          color: Colors.green,
           child: Text(
             title.toUpperCase(),
             textAlign: TextAlign.center,
@@ -57,7 +55,7 @@ class ButtonThem {
     bool iconVisibility = false,
     String iconAssetImage = '',
   }) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
+    // final themeChange = Provider.of<DarkThemeProvider>(context);
 
     return Visibility(
       visible: isVisible,
@@ -67,18 +65,18 @@ class ButtonThem {
         child: ElevatedButton(
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all<Color>(
-                themeChange.getThem() ? Colors.transparent : Colors.white),
-            foregroundColor: MaterialStateProperty.all<Color>(
-                themeChange.getThem()
-                    ? AppColors.darkModePrimary
-                    : Colors.white),
+                Colors.green),
+            // foregroundColor: MaterialStateProperty.all<Color>(
+            //     themeChange.getThem()
+            //         ? AppColors.darkModePrimary
+            //         : Colors.white),
             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
               RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(borderRadius),
                 side: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkModePrimary
-                      : AppColors.primary,
+                  // color: themeChange.getThem()
+                  //     ? AppColors.darkModePrimary
+                  //     : AppColors.primary,
                 ),
               ),
             ),
@@ -100,9 +98,7 @@ class ButtonThem {
                 title.toUpperCase(),
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
-                    color: themeChange.getThem()
-                        ? AppColors.darkModePrimary
-                        : AppColors.primary,
+                    color: Colors.white,
                     fontSize: txtSize,
                     fontWeight: FontWeight.w600),
               ),

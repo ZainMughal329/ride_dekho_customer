@@ -30,14 +30,12 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
+    // final themeChange = Provider.of<DarkThemeProvider>(context);
     return GetX<LoginController>(
         init: LoginController(),
         builder: (controller) {
           return Scaffold(
-            backgroundColor: themeChange.getThem()
-                ? AppColors.background
-                : AppColors.darkBackground,
+            backgroundColor: Colors.white,
             body: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,9 +51,7 @@ class LoginScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 10),
                           child: Text("Login".tr,
                               style: GoogleFonts.poppins(
-                                  color: themeChange.getThem()
-                                      ? Colors.black
-                                      : Colors.white,
+                                  color:Colors.black,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 18)),
                         ),
@@ -65,9 +61,7 @@ class LoginScreen extends StatelessWidget {
                               "Welcome Back! We are happy to have \n you back"
                                   .tr,
                               style: GoogleFonts.poppins(
-                                  color: themeChange.getThem()
-                                      ? Colors.black
-                                      : Colors.white,
+                                  color:  Colors.black,
                                   fontWeight: FontWeight.w400)),
                         ),
                         const SizedBox(
@@ -83,82 +77,119 @@ class LoginScreen extends StatelessWidget {
                             controller: controller.phoneNumberController.value,
                             textAlign: TextAlign.start,
                             style: GoogleFonts.poppins(
-                              color: themeChange.getThem()
-                                  ? Colors.black
-                                  : Colors.white,
+                              color:Colors.black,
                             ),
                             decoration: InputDecoration(
                                 isDense: true,
                                 filled: true,
-                                fillColor: themeChange.getThem()
-                                    ? AppColors.textField
-                                    : AppColors.darkTextField,
+                                // fillColor: Colors.green,
                                 contentPadding:
                                     const EdgeInsets.symmetric(vertical: 12),
-                                prefixIcon: CountryCodePicker(
-                                  textStyle: TextStyle(
-                                      color: themeChange.getThem()
-                                          ? Colors.black
-                                          : Colors.white),
+                                prefixIcon:
+                                CountryCodePicker(
                                   onChanged: (value) {
-                                    controller.countryCode.value =
-                                        value.dialCode.toString();
+                                    controller.countryCode.value = value.dialCode.toString();
                                   },
-                                  dialogBackgroundColor: themeChange.getThem()
-                                      ? AppColors.darkBackground
-                                      : AppColors.background,
-                                  initialSelection:
-                                      controller.countryCode.value,
-                                  comparator: (a, b) =>
-                                      b.name!.compareTo(a.name.toString()),
-                                  flagDecoration: const BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(2)),
+                                  searchStyle: TextStyle(
+                                      color: Colors.black
                                   ),
+                                  searchDecoration: InputDecoration(
+                                    prefixIcon: Icon(Icons.search , color: Colors.black),
+                                    disabledBorder: OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(Radius.circular(4)),
+                                      borderSide: BorderSide(color: AppColors.textFieldBorder, width: 1),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(Radius.circular(4)),
+                                      borderSide: BorderSide(color: AppColors.textFieldBorder, width: 1),
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(Radius.circular(4)),
+                                      borderSide: BorderSide(color: AppColors.textFieldBorder, width: 1),
+                                    ),
+                                    errorBorder: OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(Radius.circular(4)),
+                                      borderSide: BorderSide(color: AppColors.textFieldBorder, width: 1),
+                                    ),
+                                    border: OutlineInputBorder(
+                                      borderRadius: const BorderRadius.all(Radius.circular(4)),
+                                      borderSide: BorderSide(color: AppColors.textFieldBorder, width: 1),
+                                    ),
+                                  ),
+
+                                  dialogBackgroundColor: Colors.white,
+                                  dialogTextStyle: TextStyle(
+                                    color: Colors.black,
+                                  ),
+                                  initialSelection: controller.countryCode.value,
+                                  comparator: (a, b) => b.name!.compareTo(a.name.toString()),
+                                  flagDecoration:  BoxDecoration(
+                                    color: Colors.black,
+                                    borderRadius: BorderRadius.all(Radius.circular(2)),
+
+                                  ),
+                                  textStyle: TextStyle(
+                                    color:  Colors.black,
+                                  ),
+                                  // barrierColor: Colors.red,
                                 ),
-                                disabledBorder: OutlineInputBorder(
-                                  borderRadius: const BorderRadius.all(
+                                // CountryCodePicker(
+                                //   searchDecoration: InputDecoration(
+                                //   ),
+                                //   textStyle: TextStyle(
+                                //       color:  Colors.black
+                                //   ),
+                                //   onChanged: (value) {
+                                //     controller.countryCode.value =
+                                //         value.dialCode.toString();
+                                //   },
+                                //   dialogBackgroundColor: Colors.white,
+                                //   initialSelection:
+                                //       controller.countryCode.value,
+                                //   comparator: (a, b) =>
+                                //       b.name!.compareTo(a.name.toString()),
+                                //   flagDecoration: const BoxDecoration(
+                                //     borderRadius:
+                                //         BorderRadius.all(Radius.circular(2)),
+                                //   ),
+                                // ),
+
+
+
+
+                                disabledBorder: const OutlineInputBorder(
+                                  borderRadius:  BorderRadius.all(
                                       Radius.circular(4)),
                                   borderSide: BorderSide(
-                                      color: themeChange.getThem()
-                                          ? AppColors.darkTextFieldBorder
-                                          : AppColors.textFieldBorder,
+                                      color:  Colors.green,
                                       width: 1),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(4)),
                                   borderSide: BorderSide(
-                                      color: themeChange.getThem()
-                                          ? AppColors.darkTextFieldBorder
-                                          : AppColors.textFieldBorder,
+                                      color:  Colors.green,
                                       width: 1),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(4)),
                                   borderSide: BorderSide(
-                                      color: themeChange.getThem()
-                                          ? AppColors.darkTextFieldBorder
-                                          : AppColors.textFieldBorder,
+                                      // color:  Colors.green,
                                       width: 1),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(4)),
                                   borderSide: BorderSide(
-                                      color: themeChange.getThem()
-                                          ? AppColors.darkTextFieldBorder
-                                          : AppColors.textFieldBorder,
+                                      // color:  Colors.green,
                                       width: 1),
                                 ),
                                 border: OutlineInputBorder(
                                   borderRadius: const BorderRadius.all(
                                       Radius.circular(4)),
                                   borderSide: BorderSide(
-                                      color: themeChange.getThem()
-                                          ? AppColors.darkTextFieldBorder
-                                          : AppColors.textFieldBorder,
+                                      // color:  Colors.green,
                                       width: 1),
                                 ),
                                 hintText: "Phone number".tr)),
@@ -187,9 +218,7 @@ class LoginScreen extends StatelessWidget {
                     text: 'By tapping "Next" you agree to '.tr,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                          color: themeChange.getThem()
-                              ? Colors.black
-                              : Colors.white),
+                          color:  Colors.white),
                     ),
                     children: <TextSpan>[
                       TextSpan(
@@ -202,9 +231,7 @@ class LoginScreen extends StatelessWidget {
                         text: 'Terms and conditions'.tr,
                         style: GoogleFonts.poppins(
                             decoration: TextDecoration.underline,
-                            decorationColor: themeChange.getThem()
-                                ? Colors.black
-                                : Colors.white),
+                            decorationColor:  Colors.white),
                       ),
                       TextSpan(text: ' and ', style: GoogleFonts.poppins()),
                       TextSpan(
@@ -217,9 +244,7 @@ class LoginScreen extends StatelessWidget {
                         text: 'privacy policy'.tr,
                         style: GoogleFonts.poppins(
                             decoration: TextDecoration.underline,
-                            decorationColor: themeChange.getThem()
-                                ? Colors.black
-                                : Colors.white),
+                            decorationColor: Colors.white),
                       ),
                       // can add more TextSpans here...
                     ],
