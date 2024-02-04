@@ -145,7 +145,7 @@ class HomeScreen extends StatelessWidget {
         init: HomeController(),
         builder: (controller) {
           return Scaffold(
-            backgroundColor: AppColors.primary,
+            backgroundColor: Colors.green,
             body: controller.isLoading.value
                 ? Constant.loader()
                 : Column(
@@ -214,9 +214,7 @@ class HomeScreen extends StatelessWidget {
                       Expanded(
                         child: Container(
                           decoration: BoxDecoration(
-                              color: themeChange.getThem()
-                                  ? AppColors.background
-                                  : AppColors.darkBackground,
+                              color: Colors.white,
                               borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(25),
                                   topRight: Radius.circular(25))),
@@ -284,9 +282,7 @@ class HomeScreen extends StatelessWidget {
                                     ),
                                     Text("Where you want to go?".tr,
                                         style: GoogleFonts.poppins(
-                                            color: themeChange.getThem()
-                                                ? Colors.black
-                                                : Colors.white,
+                                            color: Colors.black,
                                             fontWeight: FontWeight.w600,
                                             fontSize: 18,
                                             letterSpacing: 1)),
@@ -330,9 +326,7 @@ class HomeScreen extends StatelessWidget {
                                               Column(
                                                 children: [
                                                   SvgPicture.asset(
-                                                      themeChange.getThem()
-                                                          ? 'assets/icons/ic_source_dark.svg'
-                                                          : 'assets/icons/ic_source.svg',
+                                                      'assets/icons/ic_source_dark.svg',
                                                       width: 18),
                                                   Dash(
                                                       direction: Axis.vertical,
@@ -342,9 +336,7 @@ class HomeScreen extends StatelessWidget {
                                                       dashColor: AppColors
                                                           .dottedDivider),
                                                   SvgPicture.asset(
-                                                      themeChange.getThem()
-                                                          ? 'assets/icons/ic_destination_dark.svg'
-                                                          : 'assets/icons/ic_destination.svg',
+                                                      'assets/icons/ic_destination.svg',
                                                       width: 20),
                                                 ],
                                               ),
@@ -486,9 +478,7 @@ class HomeScreen extends StatelessWidget {
                                     ),
                                     Text("Select Vehicle".tr,
                                         style: GoogleFonts.poppins(
-                                            color: themeChange.getThem()
-                                                ? Colors.black
-                                                : Colors.white,
+                                            color: Colors.black,
                                             fontWeight: FontWeight.w500,
                                             letterSpacing: 1)),
                                     const SizedBox(
@@ -522,22 +512,12 @@ class HomeScreen extends StatelessWidget {
                                                                   .selectedType
                                                                   .value ==
                                                               serviceModel
-                                                          ? themeChange
-                                                                  .getThem()
-                                                              ? AppColors
-                                                                  .primary
-                                                              : AppColors
-                                                                  .darkModePrimary
-                                                          : themeChange
-                                                                  .getThem()
-                                                              ? AppColors
-                                                                  .darkService
-                                                              : controller
-                                                                      .colors[
-                                                                  index %
-                                                                      controller
-                                                                          .colors
-                                                                          .length],
+                                                          ? Colors.green
+                                                          : controller.colors[
+                                                              index %
+                                                                  controller
+                                                                      .colors
+                                                                      .length],
                                                       borderRadius:
                                                           const BorderRadius
                                                               .all(
@@ -554,10 +534,8 @@ class HomeScreen extends StatelessWidget {
                                                       Container(
                                                         decoration:
                                                             BoxDecoration(
-                                                                color: Theme.of(
-                                                                        context)
-                                                                    .colorScheme
-                                                                    .background,
+                                                                color: Colors
+                                                                    .white,
                                                                 borderRadius:
                                                                     const BorderRadius
                                                                         .all(
@@ -572,10 +550,7 @@ class HomeScreen extends StatelessWidget {
                                                           child: Image.asset(
                                                             rideImage[index],
                                                             fit: BoxFit.contain,
-                                                            color: themeChange
-                                                                    .getThem()
-                                                                ? Colors.black
-                                                                : Colors.white,
+                                                            color: Colors.black,
                                                             height: Responsive
                                                                 .height(
                                                                     8, context),
@@ -608,13 +583,13 @@ class HomeScreen extends StatelessWidget {
                                                           serviceModel.title
                                                               .toString(),
                                                           style: GoogleFonts.poppins(
-                                                              color: controller.selectedType.value == serviceModel
-                                                                  ? themeChange.getThem()
-                                                                      ? Colors.white
-                                                                      : Colors.black
-                                                                  : themeChange.getThem()
-                                                                      ? Colors.white
-                                                                      : Colors.black)),
+                                                              color: controller
+                                                                          .selectedType
+                                                                          .value ==
+                                                                      serviceModel
+                                                                  ? Colors.white
+                                                                  : Colors
+                                                                      .black)),
                                                     ],
                                                   ),
                                                 ),
@@ -648,12 +623,7 @@ class HomeScreen extends StatelessWidget {
                                                     width: Responsive.width(
                                                         100, context),
                                                     decoration: BoxDecoration(
-                                                        color: themeChange
-                                                                .getThem()
-                                                            ? AppColors
-                                                                .background
-                                                            : AppColors
-                                                                .darkBackground,
+                                                        color: Colors.white,
                                                         borderRadius:
                                                             const BorderRadius
                                                                 .all(
@@ -677,20 +647,23 @@ class HomeScreen extends StatelessWidget {
                                                                     text:
                                                                         'Recommended Price is PKR {Constant.amountShow(amount: controller.amount.value)}. Approx time ${controller.duration}. Approx distance ${double.parse(controller.distance.value).toStringAsFixed(Constant.currencyModel!.decimalDigits!)} ${Constant.distanceType}'
                                                                             .tr,
-                                                                    style: GoogleFonts.poppins(
-                                                                        color: themeChange.getThem()
-                                                                            ? Colors.black
-                                                                            : Colors.white),
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                            color:
+                                                                                Colors.black),
                                                                   ),
                                                                 )
                                                               : RichText(
-                                                                  text: TextSpan(
-                                                                      text: 'Your Price is ${Constant.amountShow(amount: controller.amount.value)}. Approx time ${controller.duration}. Approx distance ${double.parse(controller.distance.value).toStringAsFixed(Constant.currencyModel!.decimalDigits!)} ${Constant.distanceType}'
-                                                                          .tr,
-                                                                      style: GoogleFonts.poppins(
-                                                                          color: themeChange.getThem()
-                                                                              ? Colors.black
-                                                                              : Colors.white)),
+                                                                  text:
+                                                                      TextSpan(
+                                                                    text:
+                                                                        'Your Price is ${Constant.amountShow(amount: controller.amount.value)}. Approx time ${controller.duration}. Approx distance ${double.parse(controller.distance.value).toStringAsFixed(Constant.currencyModel!.decimalDigits!)} ${Constant.distanceType}'
+                                                                            .tr,
+                                                                    style: GoogleFonts
+                                                                        .poppins(
+                                                                            color:
+                                                                                Colors.black),
+                                                                  ),
                                                                 ),
                                                         )),
                                                   ),
@@ -733,15 +706,17 @@ class HomeScreen extends StatelessWidget {
                                           borderRadius: const BorderRadius.all(
                                               Radius.circular(4)),
                                           border: Border.all(
-                                              color: AppColors.textFieldBorder,
-                                              width: 1),
+                                              color: Colors.black, width: 1),
                                         ),
                                         child: Padding(
                                           padding: const EdgeInsets.symmetric(
                                               horizontal: 10, vertical: 12),
                                           child: Row(
                                             children: [
-                                              const Icon(Icons.person),
+                                              const Icon(
+                                                Icons.person,
+                                                color: Colors.black,
+                                              ),
                                               const SizedBox(
                                                 width: 10,
                                               ),
@@ -757,12 +732,12 @@ class HomeScreen extends StatelessWidget {
                                                         .fullName
                                                         .toString(),
                                                 style: GoogleFonts.poppins(
-                                                    color: themeChange.getThem()
-                                                        ? Colors.black
-                                                        : Colors.white),
+                                                    color: Colors.black),
                                               )),
-                                              const Icon(Icons
-                                                  .arrow_drop_down_outlined)
+                                              const Icon(
+                                                Icons.arrow_drop_down_outlined,
+                                                color: Colors.black,
+                                              )
                                             ],
                                           ),
                                         ),
@@ -781,8 +756,7 @@ class HomeScreen extends StatelessWidget {
                                           borderRadius: const BorderRadius.all(
                                               Radius.circular(4)),
                                           border: Border.all(
-                                              color: AppColors.textFieldBorder,
-                                              width: 1),
+                                              color: Colors.black, width: 1),
                                         ),
                                         child: Padding(
                                           padding: const EdgeInsets.symmetric(
@@ -805,9 +779,7 @@ class HomeScreen extends StatelessWidget {
                                                         .value
                                                     : "Select Payment type".tr,
                                                 style: GoogleFonts.poppins(
-                                                    color: themeChange.getThem()
-                                                        ? Colors.black
-                                                        : Colors.white),
+                                                    color: Colors.black),
                                               )),
                                               const Icon(Icons
                                                   .arrow_drop_down_outlined)
@@ -1012,7 +984,7 @@ class HomeScreen extends StatelessWidget {
         isDismissible: false,
         builder: (context1) {
           final themeChange = Provider.of<DarkThemeProvider>(context1);
-
+// return Container();
           return FractionallySizedBox(
             heightFactor: 0.9,
             child: StatefulBuilder(builder: (context1, setState) {
@@ -1037,9 +1009,7 @@ class HomeScreen extends StatelessWidget {
                                     child: Text(
                               "Select Payment Method",
                               style: TextStyle(
-                                color: themeChange.getThem()
-                                    ? Colors.black
-                                    : Colors.white,
+                                color: Colors.black,
                               ),
                             ))),
                           ],
@@ -1098,7 +1068,7 @@ class HomeScreen extends StatelessWidget {
                                                       color: themeChange
                                                               .getThem()
                                                           ? AppColors.lightGray
-                                                          : Colors.transparent,
+                                                          : AppColors.lightGray,
                                                       borderRadius:
                                                           BorderRadius.all(
                                                               Radius.circular(
@@ -1110,8 +1080,7 @@ class HomeScreen extends StatelessWidget {
                                                         color: themeChange
                                                                 .getThem()
                                                             ? Colors.black
-                                                            : AppColors
-                                                                .darkModePrimary),
+                                                            : Colors.black),
                                                   ),
                                                 ),
                                                 const SizedBox(
@@ -1126,7 +1095,7 @@ class HomeScreen extends StatelessWidget {
                                                       color:
                                                           themeChange.getThem()
                                                               ? Colors.black
-                                                              : Colors.white,
+                                                              : Colors.black,
                                                     ),
                                                   ),
                                                 ),
@@ -1140,8 +1109,7 @@ class HomeScreen extends StatelessWidget {
                                                   activeColor:
                                                       themeChange.getThem()
                                                           ? AppColors.primary
-                                                          : AppColors
-                                                              .darkModePrimary,
+                                                          : AppColors.primary,
                                                   onChanged: (value) {
                                                     controller
                                                             .selectedPaymentMethod
@@ -1192,9 +1160,8 @@ class HomeScreen extends StatelessWidget {
                                                             .toString()
                                                     ? themeChange.getThem()
                                                         ? AppColors.primary
-                                                        : AppColors
-                                                            .darkModePrimary
-                                                    : AppColors.textFieldBorder,
+                                                        : AppColors.primary
+                                                    : AppColors.primary,
                                                 width: 1),
                                           ),
                                           child: Padding(
@@ -1209,7 +1176,7 @@ class HomeScreen extends StatelessWidget {
                                                       color: themeChange
                                                               .getThem()
                                                           ? AppColors.lightGray
-                                                          : Colors.transparent,
+                                                          : AppColors.lightGray,
                                                       borderRadius:
                                                           BorderRadius.all(
                                                               Radius.circular(
@@ -1224,7 +1191,7 @@ class HomeScreen extends StatelessWidget {
                                                                 .getThem()
                                                             ? AppColors.primary
                                                             : AppColors
-                                                                .darkModePrimary),
+                                                                .primary),
                                                   ),
                                                 ),
                                                 const SizedBox(
@@ -1239,7 +1206,7 @@ class HomeScreen extends StatelessWidget {
                                                       color:
                                                           themeChange.getThem()
                                                               ? Colors.black
-                                                              : Colors.white,
+                                                              : Colors.black,
                                                     ),
                                                   ),
                                                 ),
@@ -1253,8 +1220,7 @@ class HomeScreen extends StatelessWidget {
                                                   activeColor:
                                                       themeChange.getThem()
                                                           ? AppColors.primary
-                                                          : AppColors
-                                                              .darkModePrimary,
+                                                          : AppColors.primary,
                                                   onChanged: (value) {
                                                     controller
                                                             .selectedPaymentMethod
@@ -1308,9 +1274,8 @@ class HomeScreen extends StatelessWidget {
                                                             .toString()
                                                     ? themeChange.getThem()
                                                         ? AppColors.primary
-                                                        : AppColors
-                                                            .darkModePrimary
-                                                    : AppColors.textFieldBorder,
+                                                        : AppColors.primary
+                                                    : AppColors.primary,
                                                 width: 1),
                                           ),
                                           child: Padding(
@@ -1325,7 +1290,7 @@ class HomeScreen extends StatelessWidget {
                                                       color: themeChange
                                                               .getThem()
                                                           ? AppColors.lightGray
-                                                          : Colors.transparent,
+                                                          : AppColors.lightGray,
                                                       borderRadius:
                                                           BorderRadius.all(
                                                               Radius.circular(
@@ -1359,7 +1324,7 @@ class HomeScreen extends StatelessWidget {
                                                       color:
                                                           themeChange.getThem()
                                                               ? Colors.black
-                                                              : Colors.white,
+                                                              : Colors.black,
                                                     ),
                                                   ),
                                                 ),
@@ -1373,8 +1338,7 @@ class HomeScreen extends StatelessWidget {
                                                   activeColor:
                                                       themeChange.getThem()
                                                           ? AppColors.primary
-                                                          : AppColors
-                                                              .darkModePrimary,
+                                                          : AppColors.primary,
                                                   onChanged: (value) {
                                                     controller
                                                             .selectedPaymentMethod
@@ -1426,7 +1390,7 @@ class HomeScreen extends StatelessWidget {
 
   someOneTakingDialog(BuildContext context, HomeController controller) {
     return showModalBottomSheet(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Colors.white,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(15), topLeft: Radius.circular(15))),
@@ -1434,7 +1398,7 @@ class HomeScreen extends StatelessWidget {
         isScrollControlled: true,
         isDismissible: false,
         builder: (context1) {
-          final themeChange = Provider.of<DarkThemeProvider>(context1);
+          // final themeChange = Provider.of<DarkThemeProvider>(context1);
 
           return StatefulBuilder(builder: (context1, setState) {
             return Obx(
@@ -1452,18 +1416,14 @@ class HomeScreen extends StatelessWidget {
                         Text(
                           "Someone else taking this ride?",
                           style: GoogleFonts.poppins(
-                              color: themeChange.getThem()
-                                  ? Colors.black
-                                  : Colors.white,
+                              color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.w600),
                         ),
                         Text(
                           "Choose a contact and share a code to conform that ride.",
                           style: GoogleFonts.poppins(
-                            color: themeChange.getThem()
-                                ? Colors.black
-                                : Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                         const SizedBox(
@@ -1482,10 +1442,8 @@ class HomeScreen extends StatelessWidget {
                                   color: controller.selectedTakingRide.value
                                               .fullName ==
                                           "Myself"
-                                      ? themeChange.getThem()
-                                          ? AppColors.primary
-                                          : AppColors.darkModePrimary
-                                      : AppColors.textFieldBorder,
+                                      ? Colors.black
+                                      : Colors.black.withOpacity(0.5),
                                   width: 1),
                             ),
                             child: Padding(
@@ -1495,10 +1453,8 @@ class HomeScreen extends StatelessWidget {
                                 children: [
                                   Padding(
                                     padding: EdgeInsets.all(8.0),
-                                    child: Icon(Icons.person,
-                                        color: themeChange.getThem()
-                                            ? Colors.black
-                                            : Colors.white),
+                                    child:
+                                        Icon(Icons.person, color: Colors.black),
                                   ),
                                   const SizedBox(
                                     width: 10,
@@ -1507,9 +1463,7 @@ class HomeScreen extends StatelessWidget {
                                     child: Text(
                                       "Myself",
                                       style: GoogleFonts.poppins(
-                                        color: themeChange.getThem()
-                                            ? Colors.black
-                                            : Colors.white,
+                                        color: Colors.black,
                                       ),
                                     ),
                                   ),
@@ -1517,9 +1471,7 @@ class HomeScreen extends StatelessWidget {
                                     value: "Myself",
                                     groupValue: controller
                                         .selectedTakingRide.value.fullName,
-                                    activeColor: themeChange.getThem()
-                                        ? AppColors.primary
-                                        : AppColors.darkModePrimary,
+                                    activeColor: Colors.black,
                                     onChanged: (value) {
                                       controller.selectedTakingRide.value =
                                           ContactModel(
@@ -1553,10 +1505,8 @@ class HomeScreen extends StatelessWidget {
                                         color: controller.selectedTakingRide
                                                     .value.fullName ==
                                                 contactModel.fullName
-                                            ? themeChange.getThem()
-                                                ? AppColors.darkModePrimary
-                                                : AppColors.primary
-                                            : AppColors.textFieldBorder,
+                                            ? Colors.black
+                                            : Colors.black.withOpacity(0.5),
                                         width: 1),
                                   ),
                                   child: Padding(
@@ -1567,9 +1517,7 @@ class HomeScreen extends StatelessWidget {
                                         Padding(
                                           padding: EdgeInsets.all(8.0),
                                           child: Icon(Icons.person,
-                                              color: themeChange.getThem()
-                                                  ? Colors.black
-                                                  : Colors.white),
+                                              color: Colors.black),
                                         ),
                                         const SizedBox(
                                           width: 10,
@@ -1587,9 +1535,7 @@ class HomeScreen extends StatelessWidget {
                                               .selectedTakingRide
                                               .value
                                               .fullName,
-                                          activeColor: themeChange.getThem()
-                                              ? AppColors.primary
-                                              : AppColors.darkModePrimary,
+                                          activeColor: Colors.black,
                                           onChanged: (value) {
                                             controller.selectedTakingRide
                                                 .value = contactModel;
@@ -1629,10 +1575,8 @@ class HomeScreen extends StatelessWidget {
                               children: [
                                 Padding(
                                   padding: EdgeInsets.all(8.0),
-                                  child: Icon(Icons.contacts,
-                                      color: themeChange.getThem()
-                                          ? Colors.black
-                                          : Colors.white),
+                                  child:
+                                      Icon(Icons.contacts, color: Colors.black),
                                 ),
                                 const SizedBox(
                                   width: 10,
@@ -1641,9 +1585,7 @@ class HomeScreen extends StatelessWidget {
                                   child: Text(
                                     "Choose another contact",
                                     style: GoogleFonts.poppins(
-                                      color: themeChange.getThem()
-                                          ? Colors.black
-                                          : Colors.white,
+                                      color: Colors.black,
                                     ),
                                   ),
                                 ),
@@ -1736,8 +1678,8 @@ class HomeScreen extends StatelessWidget {
                                                 airPortModel.id
                                             ? themeChange.getThem()
                                                 ? AppColors.darkModePrimary
-                                                : AppColors.primary
-                                            : AppColors.textFieldBorder,
+                                                : AppColors.darkModePrimary
+                                            : AppColors.darkModePrimary,
                                         width: 1),
                                   ),
                                   child: Padding(
@@ -1765,7 +1707,7 @@ class HomeScreen extends StatelessWidget {
                                               .selectedAirPort.value.id,
                                           activeColor: themeChange.getThem()
                                               ? AppColors.darkModePrimary
-                                              : AppColors.primary,
+                                              : AppColors.darkModePrimary,
                                           onChanged: (value) {
                                             controller.selectedAirPort.value =
                                                 airPortModel;

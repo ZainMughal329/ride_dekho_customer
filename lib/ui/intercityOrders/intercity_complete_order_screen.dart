@@ -28,9 +28,9 @@ class IntercityCompleteOrderScreen extends StatelessWidget {
         init: IntercityCompleteOrderController(),
         builder: (controller) {
           return Scaffold(
-              backgroundColor: AppColors.primary,
+              backgroundColor: Colors.green,
               appBar: AppBar(
-                backgroundColor: AppColors.primary,
+                backgroundColor: Colors.white,
                 title:  Text("OutStation ride details".tr),
                 leading: InkWell(
                     onTap: () {
@@ -38,6 +38,7 @@ class IntercityCompleteOrderScreen extends StatelessWidget {
                     },
                     child: const Icon(
                       Icons.arrow_back,
+                      color: Colors.black,
                     )),
               ),
               body: Column(
@@ -64,18 +65,12 @@ class IntercityCompleteOrderScreen extends StatelessWidget {
                                       children: [
                                         Container(
                                           decoration: BoxDecoration(
-                                            color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                            color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.darkContainerBackground,
                                             borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                            border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
+                                            border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.darkContainerBorder, width: 0.5),
                                             boxShadow: themeChange.getThem()
                                                 ? null
-                                                : [
-                                                    BoxShadow(
-                                                      color: Colors.black.withOpacity(0.10),
-                                                      blurRadius: 5,
-                                                      offset: const Offset(0, 4), // changes position of shadow
-                                                    ),
-                                                  ],
+                                                : null,
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(8.0),
@@ -155,18 +150,12 @@ class IntercityCompleteOrderScreen extends StatelessWidget {
                                                     DriverUserModel driverModel = snapshot.data!;
                                                     return Container(
                                                       decoration: BoxDecoration(
-                                                        color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                                        color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.darkContainerBackground,
                                                         borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                                        border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
+                                                        border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.darkContainerBorder, width: 0.5),
                                                         boxShadow: themeChange.getThem()
                                                             ? null
-                                                            : [
-                                                                BoxShadow(
-                                                                  color: Colors.black.withOpacity(0.10),
-                                                                  blurRadius: 5,
-                                                                  offset: const Offset(0, 4), // changes position of shadow
-                                                                ),
-                                                              ],
+                                                            : null
                                                       ),
                                                       child: Padding(
                                                         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
@@ -179,7 +168,7 @@ class IntercityCompleteOrderScreen extends StatelessWidget {
                                                                 SvgPicture.asset(
                                                                   'assets/icons/ic_car.svg',
                                                                   width: 18,
-                                                                  color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                  color: themeChange.getThem() ? Colors.white : Colors.white,
                                                                 ),
                                                                 const SizedBox(
                                                                   width: 10,
@@ -195,7 +184,7 @@ class IntercityCompleteOrderScreen extends StatelessWidget {
                                                                 SvgPicture.asset(
                                                                   'assets/icons/ic_color.svg',
                                                                   width: 18,
-                                                                  color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                  color: themeChange.getThem() ? Colors.white : Colors.white,
                                                                 ),
                                                                 const SizedBox(
                                                                   width: 10,
@@ -211,7 +200,7 @@ class IntercityCompleteOrderScreen extends StatelessWidget {
                                                                 Image.asset(
                                                                   'assets/icons/ic_number.png',
                                                                   width: 18,
-                                                                  color: themeChange.getThem() ? Colors.white : Colors.black,
+                                                                  color: themeChange.getThem() ? Colors.white : Colors.white,
                                                                 ),
                                                                 const SizedBox(
                                                                   width: 10,
@@ -243,18 +232,12 @@ class IntercityCompleteOrderScreen extends StatelessWidget {
                                         ),
                                         Container(
                                           decoration: BoxDecoration(
-                                            color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                            color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.darkContainerBackground,
                                             borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                            border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
+                                            border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.darkContainerBorder, width: 0.5),
                                             boxShadow: themeChange.getThem()
                                                 ? null
-                                                : [
-                                                    BoxShadow(
-                                                      color: Colors.black.withOpacity(0.10),
-                                                      blurRadius: 5,
-                                                      offset: const Offset(0, 4), // changes position of shadow
-                                                    ),
-                                                  ],
+                                                :  null,
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(8.0),
@@ -267,7 +250,7 @@ class IntercityCompleteOrderScreen extends StatelessWidget {
                                         Padding(
                                           padding: const EdgeInsets.symmetric(vertical: 20),
                                           child: Container(
-                                            decoration: BoxDecoration(color: themeChange.getThem() ? AppColors.darkGray : AppColors.gray, borderRadius: const BorderRadius.all(Radius.circular(10))),
+                                            decoration: BoxDecoration(color: themeChange.getThem() ? AppColors.darkGray : AppColors.darkGray, borderRadius: const BorderRadius.all(Radius.circular(10))),
                                             child: Padding(
                                                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
                                                 child: Center(
@@ -282,18 +265,12 @@ class IntercityCompleteOrderScreen extends StatelessWidget {
                                         ),
                                         Container(
                                           decoration: BoxDecoration(
-                                            color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.containerBackground,
+                                            color: themeChange.getThem() ? AppColors.darkContainerBackground : AppColors.darkContainerBackground,
                                             borderRadius: const BorderRadius.all(Radius.circular(10)),
-                                            border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.containerBorder, width: 0.5),
+                                            border: Border.all(color: themeChange.getThem() ? AppColors.darkContainerBorder : AppColors.darkContainerBorder, width: 0.5),
                                             boxShadow: themeChange.getThem()
                                                 ? null
-                                                : [
-                                                    BoxShadow(
-                                                      color: Colors.black.withOpacity(0.10),
-                                                      blurRadius: 5,
-                                                      offset: const Offset(0, 4), // changes position of shadow
-                                                    ),
-                                                  ],
+                                                : null,
                                           ),
                                           child: Padding(
                                             padding: const EdgeInsets.all(8.0),
@@ -309,7 +286,7 @@ class IntercityCompleteOrderScreen extends StatelessWidget {
                                                       ),
                                                     ),
                                                     Container(
-                                                      decoration: BoxDecoration(color: themeChange.getThem() ? AppColors.darkGray : AppColors.gray, borderRadius: BorderRadius.all(Radius.circular(5))),
+                                                      decoration: BoxDecoration(color: themeChange.getThem() ? AppColors.darkGray : AppColors.darkGray, borderRadius: BorderRadius.all(Radius.circular(5))),
                                                       child: Padding(
                                                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
                                                         child: Text(

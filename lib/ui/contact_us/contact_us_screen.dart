@@ -22,9 +22,7 @@ class ContactUsScreen extends StatelessWidget {
         init: ContactUsController(),
         builder: (controller) {
           return Scaffold(
-            backgroundColor: themeChange.getThem()
-                ? AppColors.background
-                : AppColors.darkBackground,
+            backgroundColor: Colors.white,
             body: Column(
               children: [
                 SizedBox(
@@ -34,7 +32,7 @@ class ContactUsScreen extends StatelessWidget {
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.background,
+                        color:Colors.white,
                         borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(25),
                             topRight: Radius.circular(25))),
@@ -55,18 +53,14 @@ class ContactUsScreen extends StatelessWidget {
                                     children: [
                                       Text("Contact us".tr,
                                           style: GoogleFonts.poppins(
-                                              color: themeChange.getThem()
-                                                  ? Colors.black
-                                                  : Colors.white,
+                                              color:Colors.black,
                                               fontSize: 20,
                                               fontWeight: FontWeight.w600)),
                                       Text(
                                           "Let us know your issue & feedback"
                                               .tr,
                                           style: GoogleFonts.poppins(
-                                            color: themeChange.getThem()
-                                                ? Colors.black
-                                                : Colors.white,
+                                            color:Colors.black,
                                           )),
                                       const SizedBox(
                                         height: 20,
@@ -74,23 +68,22 @@ class ContactUsScreen extends StatelessWidget {
                                       TabBar(
                                         indicatorColor:
                                             AppColors.darkModePrimary,
+                                        dividerColor: Colors.white,
                                         tabs: [
                                           Tab(
                                               child: Text(
                                             "Call Us".tr,
                                             style: GoogleFonts.poppins(
-                                              color: themeChange.getThem()
-                                                  ? Colors.black
-                                                  : Colors.white,
+                                              color:Colors.black,
+
                                             ),
-                                          )),
+                                          ),
+                                          ),
                                           Tab(
                                               child: Text(
                                             "Email Us".tr,
                                             style: GoogleFonts.poppins(
-                                              color: themeChange.getThem()
-                                                  ? Colors.black
-                                                  : Colors.white,
+                                              color:Colors.black,
                                             ),
                                           )),
                                         ],
@@ -113,10 +106,7 @@ class ContactUsScreen extends StatelessWidget {
                                                       children: [
                                                         Icon(
                                                           Icons.call,
-                                                          color: themeChange
-                                                                  .getThem()
-                                                              ? Colors.black
-                                                              : Colors.white,
+                                                          color:Colors.black,
                                                         ),
                                                         const SizedBox(
                                                           width: 20,
@@ -125,10 +115,7 @@ class ContactUsScreen extends StatelessWidget {
                                                           controller
                                                               .phone.value,
                                                           style: TextStyle(
-                                                            color: themeChange
-                                                                    .getThem()
-                                                                ? Colors.black
-                                                                : Colors.white,
+                                                            color:Colors.black,
                                                           ),
                                                         )
                                                       ],
@@ -137,7 +124,9 @@ class ContactUsScreen extends StatelessWidget {
                                                   const SizedBox(
                                                     height: 10,
                                                   ),
-                                                  const Divider(),
+                                                  const Divider(
+                                                    color: Colors.white,
+                                                  ),
                                                   const SizedBox(
                                                     height: 10,
                                                   ),
@@ -145,10 +134,7 @@ class ContactUsScreen extends StatelessWidget {
                                                     children: [
                                                       Icon(
                                                         Icons.location_on,
-                                                        color: themeChange
-                                                                .getThem()
-                                                            ? Colors.black
-                                                            : Colors.white,
+                                                        color:Colors.black,
                                                       ),
                                                       const SizedBox(
                                                         width: 20,
@@ -158,12 +144,7 @@ class ContactUsScreen extends StatelessWidget {
                                                               controller.address
                                                                   .value,
                                                               style: TextStyle(
-                                                                color: themeChange
-                                                                        .getThem()
-                                                                    ? Colors
-                                                                        .black
-                                                                    : Colors
-                                                                        .white,
+                                                                color:Colors.black,
                                                               )))
                                                     ],
                                                   )
@@ -181,10 +162,7 @@ class ContactUsScreen extends StatelessWidget {
                                                   children: [
                                                     Text("Write us".tr,
                                                         style: GoogleFonts.poppins(
-                                                            color: themeChange
-                                                                    .getThem()
-                                                                ? Colors.black
-                                                                : Colors.white,
+                                                            color:Colors.black,
                                                             fontSize: 20,
                                                             fontWeight:
                                                                 FontWeight
@@ -194,10 +172,7 @@ class ContactUsScreen extends StatelessWidget {
                                                             .tr,
                                                         style:
                                                             GoogleFonts.poppins(
-                                                          color: themeChange
-                                                                  .getThem()
-                                                              ? Colors.black
-                                                              : Colors.white,
+                                                              color:Colors.black,
                                                         )),
                                                     const SizedBox(
                                                       height: 20,

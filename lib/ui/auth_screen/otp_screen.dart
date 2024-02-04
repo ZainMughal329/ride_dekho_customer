@@ -20,7 +20,7 @@ class OtpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
+    // final themeChange = Provider.of<DarkThemeProvider>(context);
     return GetX<OtpController>(
         init: OtpController(),
         builder: (controller) {
@@ -39,9 +39,7 @@ class OtpScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 10),
                           child: Text("Verify Phone Number".tr,
                               style: GoogleFonts.poppins(
-                                  color: themeChange.getThem()
-                                      ? Colors.black
-                                      : Colors.white,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 18)),
                         ),
@@ -51,9 +49,7 @@ class OtpScreen extends StatelessWidget {
                               "We just send a verification code to \n${controller.countryCode.value + controller.phoneNumber.value}"
                                   .tr,
                               style: GoogleFonts.poppins(
-                                color: themeChange.getThem()
-                                    ? Colors.black
-                                    : Colors.white,
+                                color: Colors.black,
                               )),
                         ),
                         Padding(
@@ -65,24 +61,12 @@ class OtpScreen extends StatelessWidget {
                             pinTheme: PinTheme(
                               fieldHeight: 50,
                               fieldWidth: 50,
-                              activeColor: themeChange.getThem()
-                                  ? AppColors.darkTextFieldBorder
-                                  : AppColors.textFieldBorder,
-                              selectedColor: themeChange.getThem()
-                                  ? AppColors.darkTextFieldBorder
-                                  : AppColors.textFieldBorder,
-                              inactiveColor: themeChange.getThem()
-                                  ? AppColors.darkTextFieldBorder
-                                  : AppColors.textFieldBorder,
-                              activeFillColor: themeChange.getThem()
-                                  ? AppColors.darkTextField
-                                  : AppColors.textField,
-                              inactiveFillColor: themeChange.getThem()
-                                  ? AppColors.darkTextField
-                                  : AppColors.textField,
-                              selectedFillColor: themeChange.getThem()
-                                  ? AppColors.textField
-                                  : AppColors.darkTextField,
+                              activeColor:  Colors.white,
+                              selectedColor:  Colors.white,
+                              inactiveColor: Colors.green,
+                              activeFillColor:  Colors.green,
+                              inactiveFillColor:  Colors.white,
+                              selectedFillColor:  Colors.green,
                               shape: PinCodeFieldShape.box,
                               borderRadius: BorderRadius.circular(10),
                             ),

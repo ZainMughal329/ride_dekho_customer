@@ -30,13 +30,13 @@ class ProfileScreen extends StatelessWidget {
         init: ProfileController(),
         builder: (controller) {
           return Scaffold(
-              backgroundColor: AppColors.primary,
+              backgroundColor: Colors.green,
               body: Column(
                 children: [
                   Container(
                     height: Responsive.width(45, context),
                     width: Responsive.width(100, context),
-                    color: AppColors.primary,
+                    color: Colors.green,
                     child: Stack(
                       alignment: Alignment.bottomCenter,
                       children: [
@@ -123,7 +123,7 @@ class ProfileScreen extends StatelessWidget {
                           : Container(
                               decoration: BoxDecoration(
                                   color:
-                                      Theme.of(context).colorScheme.background,
+                                      Colors.white,
                                   borderRadius: const BorderRadius.only(
                                       topLeft: Radius.circular(25),
                                       topRight: Radius.circular(25))),
@@ -165,7 +165,7 @@ class ProfileScreen extends StatelessWidget {
                                                   fillColor: themeChange
                                                           .getThem()
                                                       ? AppColors.textField
-                                                      : AppColors.darkTextField,
+                                                      :AppColors.textField,
                                                   contentPadding:
                                                       const EdgeInsets
                                                           .symmetric(
@@ -175,7 +175,7 @@ class ProfileScreen extends StatelessWidget {
                                                         color: themeChange
                                                                 .getThem()
                                                             ? Colors.black
-                                                            : Colors.white),
+                                                            : Colors.black),
                                                     onChanged: (value) {
                                                       controller.countryCode
                                                               .value =
@@ -187,7 +187,7 @@ class ProfileScreen extends StatelessWidget {
                                                             ? AppColors
                                                                 .textField
                                                             : AppColors
-                                                                .darkTextField,
+                                                            .textField,
                                                     initialSelection: controller
                                                         .countryCode.value,
                                                     comparator: (a, b) =>
@@ -212,7 +212,7 @@ class ProfileScreen extends StatelessWidget {
                                                             ? AppColors
                                                                 .darkTextFieldBorder
                                                             : AppColors
-                                                                .textFieldBorder,
+                                                            .darkTextFieldBorder,
                                                         width: 1),
                                                   ),
                                                   focusedBorder:
@@ -226,7 +226,7 @@ class ProfileScreen extends StatelessWidget {
                                                             ? AppColors
                                                                 .darkTextFieldBorder
                                                             : AppColors
-                                                                .textFieldBorder,
+                                                            .darkTextFieldBorder,
                                                         width: 1),
                                                   ),
                                                   enabledBorder:
@@ -240,7 +240,7 @@ class ProfileScreen extends StatelessWidget {
                                                             ? AppColors
                                                                 .darkTextFieldBorder
                                                             : AppColors
-                                                                .textFieldBorder,
+                                                            .darkTextFieldBorder,
                                                         width: 1),
                                                   ),
                                                   errorBorder:
@@ -254,7 +254,7 @@ class ProfileScreen extends StatelessWidget {
                                                             ? AppColors
                                                                 .darkTextFieldBorder
                                                             : AppColors
-                                                                .textFieldBorder,
+                                                            .darkTextFieldBorder,
                                                         width: 1),
                                                   ),
                                                   border: OutlineInputBorder(
@@ -267,7 +267,7 @@ class ProfileScreen extends StatelessWidget {
                                                             ? AppColors
                                                                 .darkTextFieldBorder
                                                             : AppColors
-                                                                .textFieldBorder,
+                                                            .darkTextFieldBorder,
                                                         width: 1),
                                                   ),
                                                   hintText: "Phone number".tr)),
@@ -340,6 +340,7 @@ class ProfileScreen extends StatelessWidget {
 
   buildBottomSheet(BuildContext context, ProfileController controller) {
     return showModalBottomSheet(
+      backgroundColor: Colors.white,
         context: context,
         builder: (context) {
           return StatefulBuilder(builder: (context, setState) {

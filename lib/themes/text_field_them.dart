@@ -15,7 +15,7 @@ class TextFieldThem {
     bool enable = true,
     int maxLine = 1,
   }) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
+    // final themeChange = Provider.of<DarkThemeProvider>(context);
 
     return TextFormField(
         controller: controller,
@@ -24,55 +24,47 @@ class TextFieldThem {
         keyboardType: keyBoardType,
         maxLines: maxLine,
         style: GoogleFonts.poppins(
-            color: themeChange.getThem() ? Colors.black : Colors.white),
+            color: Colors.black ),
         decoration: InputDecoration(
-            filled: true,
-            fillColor: themeChange.getThem()
-                ? AppColors.textField
-                : AppColors.darkTextField,
+            // filled: true,
+            // fillColor: themeChange.getThem()
+            //     ? AppColors.textField
+            //     : AppColors.darkTextField,
             contentPadding: EdgeInsets.only(
                 left: 10, right: 10, top: maxLine == 1 ? 0 : 10),
             disabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: Colors.black,
                   width: 1),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.primary
-                      : AppColors.darkModePrimary,
+                  color: Colors.black,
                   width: 1),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: Colors.black,
                   width: 1),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: Colors.black,
                   width: 1),
             ),
             border: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: Colors.black,
                   width: 1),
             ),
-            hintText: hintText));
+            hintText: hintText,
+        hintStyle: TextStyle(color: Colors.black),
+        ));
   }
 
   static buildTextFiledWithPrefixIcon(
@@ -83,7 +75,7 @@ class TextFieldThem {
     TextInputType keyBoardType = TextInputType.text,
     bool enable = true,
   }) {
-    final themeChange = Provider.of<DarkThemeProvider>(context);
+    // final themeChange = Provider.of<DarkThemeProvider>(context);
 
     return TextFormField(
         controller: controller,
@@ -91,55 +83,47 @@ class TextFieldThem {
         enabled: enable,
         keyboardType: keyBoardType,
         style: GoogleFonts.poppins(
-            color: themeChange.getThem() ? Colors.black : Colors.white),
+            color: Colors.black),
         decoration: InputDecoration(
             prefix: prefix,
-            filled: true,
-            fillColor: themeChange.getThem()
-                ? AppColors.textField
-                : AppColors.darkTextField,
+            // filled: true,
+            // fillColor: themeChange.getThem()
+            //     ? AppColors.textField
+            //     : AppColors.darkTextField,
             contentPadding: const EdgeInsets.only(left: 10, right: 10),
             disabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: Colors.black,
                   width: 1),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.primary
-                      : AppColors.darkModePrimary,
+                  color: Colors.black,
                   width: 1),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: Colors.black,
                   width: 1),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: Colors.black,
                   width: 1),
             ),
             border: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: Colors.black,
                   width: 1),
             ),
-            hintText: hintText));
+            hintText: hintText,
+        hintStyle: TextStyle(color: Colors.black),
+        ));
   }
 
   static buildTextFiledWithSuffixIcon(
@@ -161,51 +145,43 @@ class TextFieldThem {
             color: themeChange.getThem() ? Colors.white : Colors.black),
         decoration: InputDecoration(
             suffixIcon: suffixIcon,
-            filled: true,
-            fillColor: themeChange.getThem()
-                ? AppColors.darkTextField
-                : AppColors.textField,
+            // filled: true,
+            // fillColor: themeChange.getThem()
+            //     ? AppColors.darkTextField
+            //     : AppColors.textField,
             contentPadding: const EdgeInsets.only(left: 10, right: 10),
             disabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                 color: Colors.black,
                   width: 1),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkModePrimary
-                      : AppColors.primary,
+                 color: Colors.black,
                   width: 1),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: Colors.black,
                   width: 1),
             ),
             errorBorder: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: Colors.black,
                   width: 1),
             ),
             border: OutlineInputBorder(
               borderRadius: const BorderRadius.all(Radius.circular(4)),
               borderSide: BorderSide(
-                  color: themeChange.getThem()
-                      ? AppColors.darkTextFieldBorder
-                      : AppColors.textFieldBorder,
+                  color: Colors.black,
                   width: 1),
             ),
-            hintText: hintText));
+            hintText: hintText,
+            hintStyle: TextStyle(color: Colors.black),
+        ));
   }
 }

@@ -93,7 +93,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             home: GetBuilder<GlobalSettingController>(
                 init: GlobalSettingController(),
                 builder: (context) {
-                  return const LoginScreen();
+                  return const OnBoardingScreen();
                 }));
       }),
     );

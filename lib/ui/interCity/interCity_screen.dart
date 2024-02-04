@@ -42,7 +42,7 @@ class InterCityScreen extends StatelessWidget {
       init: InterCityController(),
       builder: (controller) {
         return Scaffold(
-          backgroundColor: AppColors.primary,
+          backgroundColor: Colors.green,
           body: controller.isLoading.value
               ? Constant.loader()
               : Column(
@@ -54,7 +54,7 @@ class InterCityScreen extends StatelessWidget {
                     Expanded(
                       child: Container(
                         decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.background,
+                            color: Colors.white,
                             borderRadius: const BorderRadius.only(
                                 topLeft: Radius.circular(25),
                                 topRight: Radius.circular(25))),
@@ -200,6 +200,7 @@ class InterCityScreen extends StatelessWidget {
                                   Text("Select Option".tr,
                                       style: GoogleFonts.poppins(
                                           fontWeight: FontWeight.w500,
+                                          color:Colors.black,
                                           letterSpacing: 1)),
                                   const SizedBox(
                                     height: 05,
@@ -235,10 +236,11 @@ class InterCityScreen extends StatelessWidget {
                                                         ? themeChange.getThem()
                                                             ? AppColors
                                                                 .darkModePrimary
-                                                            : AppColors.primary
+                                                            : AppColors
+                                                        .darkModePrimary
                                                         : themeChange.getThem()
                                                             ? AppColors
-                                                                .darkService
+                                                        .darkModePrimary
                                                             : controller.colors[
                                                                 index %
                                                                     controller
@@ -257,9 +259,7 @@ class InterCityScreen extends StatelessWidget {
                                                     Container(
                                                       decoration: BoxDecoration(
                                                           color:
-                                                              Theme.of(context)
-                                                                  .colorScheme
-                                                                  .background,
+                                                              Colors.white,
                                                           borderRadius:
                                                               const BorderRadius
                                                                   .all(
@@ -308,13 +308,13 @@ class InterCityScreen extends StatelessWidget {
                                                                         ? Colors
                                                                             .black
                                                                         : Colors
-                                                                            .white
+                                                                    .black
                                                                     : themeChange
                                                                             .getThem()
                                                                         ? Colors
                                                                             .white
                                                                         : Colors
-                                                                            .black)),
+                                                                    .white)),
                                                   ],
                                                 ),
                                               ),
@@ -352,7 +352,7 @@ class InterCityScreen extends StatelessWidget {
                                           buttonText: 'Confirm'.tr,
                                           buttonSingleColor: AppColors.primary,
                                           buttonTextStyle: const TextStyle(
-                                              color: Colors.white),
+                                              color: Colors.white,),
                                         ).show(context);
                                       },
                                       child: TextFieldThem.buildTextFiled(
@@ -446,7 +446,9 @@ class InterCityScreen extends StatelessWidget {
                                                                 : "Select Freight Vehicle"
                                                                     .tr,
                                                             style: GoogleFonts
-                                                                .poppins(),
+                                                                .poppins(
+
+                                                            ),
                                                           )),
                                                           const Icon(Icons
                                                               .arrow_drop_down_outlined)
@@ -631,7 +633,7 @@ class InterCityScreen extends StatelessWidget {
                                                           color: themeChange
                                                                   .getThem()
                                                               ? Colors.black
-                                                              : Colors.white,
+                                                              : Colors.black,
                                                         ),
                                                       )),
                                                       const Icon(Icons
@@ -682,7 +684,7 @@ class InterCityScreen extends StatelessWidget {
                                               style: GoogleFonts.poppins(
                                                 color: themeChange.getThem()
                                                     ? Colors.black
-                                                    : Colors.white,
+                                                    : Colors.black,
                                               ),
                                             )),
                                             const Icon(
@@ -1342,7 +1344,7 @@ class InterCityScreen extends StatelessWidget {
 
   paymentMethodDialog(BuildContext context, InterCityController controller) {
     return showModalBottomSheet(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Colors.white,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(15), topLeft: Radius.circular(15))),
@@ -1378,7 +1380,7 @@ class InterCityScreen extends StatelessWidget {
                               style: TextStyle(
                                 color: themeChange.getThem()
                                     ? Colors.black
-                                    : Colors.white,
+                                    : Colors.black,
                               ),
                             ))),
                           ],
@@ -1420,9 +1422,8 @@ class InterCityScreen extends StatelessWidget {
                                                             .toString()
                                                     ? themeChange.getThem()
                                                         ? AppColors.primary
-                                                        : AppColors
-                                                            .darkModePrimary
-                                                    : AppColors.textFieldBorder,
+                                                        : AppColors.primary
+                                                    : AppColors.primary,
                                                 width: 1),
                                           ),
                                           child: Padding(
@@ -1437,7 +1438,7 @@ class InterCityScreen extends StatelessWidget {
                                                       color: themeChange
                                                               .getThem()
                                                           ? AppColors.lightGray
-                                                          : Colors.transparent,
+                                                          : AppColors.lightGray,
                                                       borderRadius:
                                                           BorderRadius.all(
                                                               Radius.circular(
@@ -1449,8 +1450,7 @@ class InterCityScreen extends StatelessWidget {
                                                         color: themeChange
                                                                 .getThem()
                                                             ? Colors.black
-                                                            : AppColors
-                                                                .darkModePrimary),
+                                                            : Colors.black),
                                                   ),
                                                 ),
                                                 const SizedBox(
@@ -1465,7 +1465,7 @@ class InterCityScreen extends StatelessWidget {
                                                       color:
                                                           themeChange.getThem()
                                                               ? Colors.black
-                                                              : Colors.white,
+                                                              : Colors.black,
                                                     ),
                                                   ),
                                                 ),
@@ -1479,8 +1479,7 @@ class InterCityScreen extends StatelessWidget {
                                                   activeColor:
                                                       themeChange.getThem()
                                                           ? AppColors.primary
-                                                          : AppColors
-                                                              .darkModePrimary,
+                                                          :AppColors.primary,
                                                   onChanged: (value) {
                                                     controller
                                                             .selectedPaymentMethod
@@ -1531,9 +1530,8 @@ class InterCityScreen extends StatelessWidget {
                                                             .toString()
                                                     ? themeChange.getThem()
                                                         ? AppColors.primary
-                                                        : AppColors
-                                                            .darkModePrimary
-                                                    : AppColors.textFieldBorder,
+                                                        : AppColors.primary
+                                                    : AppColors.primary,
                                                 width: 1),
                                           ),
                                           child: Padding(
@@ -1548,7 +1546,7 @@ class InterCityScreen extends StatelessWidget {
                                                       color: themeChange
                                                               .getThem()
                                                           ? AppColors.lightGray
-                                                          : Colors.transparent,
+                                                          : AppColors.lightGray,
                                                       borderRadius:
                                                           BorderRadius.all(
                                                               Radius.circular(
@@ -1562,8 +1560,7 @@ class InterCityScreen extends StatelessWidget {
                                                         color: themeChange
                                                                 .getThem()
                                                             ? AppColors.primary
-                                                            : AppColors
-                                                                .darkModePrimary),
+                                                            :  AppColors.primary),
                                                   ),
                                                 ),
                                                 const SizedBox(
@@ -1578,7 +1575,7 @@ class InterCityScreen extends StatelessWidget {
                                                       color:
                                                           themeChange.getThem()
                                                               ? Colors.black
-                                                              : Colors.white,
+                                                              : Colors.black,
                                                     ),
                                                   ),
                                                 ),
@@ -1592,8 +1589,7 @@ class InterCityScreen extends StatelessWidget {
                                                   activeColor:
                                                       themeChange.getThem()
                                                           ? AppColors.primary
-                                                          : AppColors
-                                                              .darkModePrimary,
+                                                          : AppColors.primary,
                                                   onChanged: (value) {
                                                     controller
                                                             .selectedPaymentMethod
@@ -1640,7 +1636,7 @@ class InterCityScreen extends StatelessWidget {
 
   vehicleFreightDialog(BuildContext context, InterCityController controller) {
     return showModalBottomSheet(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Colors.white,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(15), topLeft: Radius.circular(15))),
@@ -1670,7 +1666,7 @@ class InterCityScreen extends StatelessWidget {
                               child: Text(
                                 "Which vehicle is suitable for your cargo?",
                                 style: GoogleFonts.poppins(
-                                    fontSize: 16, fontWeight: FontWeight.w600),
+                                    fontSize: 16, fontWeight: FontWeight.w600,color: Colors.black),
                               ),
                             ),
                             const SizedBox(
@@ -1715,8 +1711,8 @@ class InterCityScreen extends StatelessWidget {
                                                   freightModel.id
                                               ? themeChange.getThem()
                                                   ? AppColors.darkModePrimary
-                                                  : AppColors.primary
-                                              : AppColors.textFieldBorder,
+                                                  : AppColors.darkModePrimary
+                                              : AppColors.darkModePrimary,
                                           width: 1),
                                     ),
                                     child: Padding(
@@ -1774,7 +1770,7 @@ class InterCityScreen extends StatelessWidget {
                                                       color: themeChange
                                                               .getThem()
                                                           ? AppColors.darkGray
-                                                          : AppColors.gray,
+                                                          : AppColors.darkGray,
                                                       borderRadius:
                                                           const BorderRadius
                                                               .all(
@@ -1842,7 +1838,7 @@ class InterCityScreen extends StatelessWidget {
 
   someOneTakingDialog(BuildContext context, InterCityController controller) {
     return showModalBottomSheet(
-        backgroundColor: Theme.of(context).colorScheme.background,
+        backgroundColor: Colors.white,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 topRight: Radius.circular(15), topLeft: Radius.circular(15))),
@@ -1870,7 +1866,7 @@ class InterCityScreen extends StatelessWidget {
                           style: GoogleFonts.poppins(
                               color: themeChange.getThem()
                                   ? Colors.black
-                                  : Colors.white,
+                                  : Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.w600),
                         ),
@@ -1879,7 +1875,7 @@ class InterCityScreen extends StatelessWidget {
                           style: GoogleFonts.poppins(
                             color: themeChange.getThem()
                                 ? Colors.black
-                                : Colors.white,
+                                : Colors.black,
                           ),
                         ),
                         const SizedBox(
@@ -1900,8 +1896,8 @@ class InterCityScreen extends StatelessWidget {
                                           "Myself"
                                       ? themeChange.getThem()
                                           ? AppColors.primary
-                                          : AppColors.darkModePrimary
-                                      : AppColors.textFieldBorder,
+                                          : AppColors.primary
+                                      : AppColors.primary,
                                   width: 1),
                             ),
                             child: Padding(
@@ -1914,7 +1910,7 @@ class InterCityScreen extends StatelessWidget {
                                     child: Icon(Icons.person,
                                         color: themeChange.getThem()
                                             ? Colors.black
-                                            : Colors.white),
+                                            : Colors.black),
                                   ),
                                   const SizedBox(
                                     width: 10,
@@ -1925,7 +1921,7 @@ class InterCityScreen extends StatelessWidget {
                                       style: GoogleFonts.poppins(
                                         color: themeChange.getThem()
                                             ? Colors.black
-                                            : Colors.white,
+                                            : Colors.black,
                                       ),
                                     ),
                                   ),
@@ -1935,7 +1931,7 @@ class InterCityScreen extends StatelessWidget {
                                         .selectedTakingRide.value.fullName,
                                     activeColor: themeChange.getThem()
                                         ? AppColors.primary
-                                        : AppColors.darkModePrimary,
+                                        : AppColors.primary,
                                     onChanged: (value) {
                                       controller.selectedTakingRide.value =
                                           ContactModel(
@@ -1971,8 +1967,8 @@ class InterCityScreen extends StatelessWidget {
                                                 contactModel.fullName
                                             ? themeChange.getThem()
                                                 ? AppColors.darkModePrimary
-                                                : AppColors.primary
-                                            : AppColors.textFieldBorder,
+                                                : AppColors.darkModePrimary
+                                            : AppColors.darkModePrimary,
                                         width: 1),
                                   ),
                                   child: Padding(
@@ -1985,7 +1981,7 @@ class InterCityScreen extends StatelessWidget {
                                           child: Icon(Icons.person,
                                               color: themeChange.getThem()
                                                   ? Colors.black
-                                                  : Colors.white),
+                                                  : Colors.black),
                                         ),
                                         const SizedBox(
                                           width: 10,
@@ -2005,7 +2001,7 @@ class InterCityScreen extends StatelessWidget {
                                               .fullName,
                                           activeColor: themeChange.getThem()
                                               ? AppColors.primary
-                                              : AppColors.darkModePrimary,
+                                              : AppColors.primary,
                                           onChanged: (value) {
                                             controller.selectedTakingRide
                                                 .value = contactModel;
@@ -2048,7 +2044,7 @@ class InterCityScreen extends StatelessWidget {
                                   child: Icon(Icons.contacts,
                                       color: themeChange.getThem()
                                           ? Colors.black
-                                          : Colors.white),
+                                          : Colors.black),
                                 ),
                                 const SizedBox(
                                   width: 10,
@@ -2059,7 +2055,7 @@ class InterCityScreen extends StatelessWidget {
                                     style: GoogleFonts.poppins(
                                       color: themeChange.getThem()
                                           ? Colors.black
-                                          : Colors.white,
+                                          : Colors.black,
                                     ),
                                   ),
                                 ),

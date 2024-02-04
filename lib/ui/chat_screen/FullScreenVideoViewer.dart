@@ -34,11 +34,11 @@ class _FullScreenVideoViewerState extends State<FullScreenVideoViewer> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: Colors.black,
-        iconTheme: const IconThemeData(color: Colors.white),
+        backgroundColor: Colors.white,
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: Container(
-          color: Colors.black,
+          color: Colors.white,
           child: Hero(
             tag: widget.videoUrl,
             child: Center(

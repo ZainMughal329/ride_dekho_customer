@@ -19,7 +19,7 @@ class FaqScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: themeChange.getThem()
           ? AppColors.background
-          : AppColors.darkBackground,
+          : AppColors.background,
       body: Column(
         children: [
           SizedBox(
@@ -29,7 +29,7 @@ class FaqScreen extends StatelessWidget {
           Expanded(
             child: Container(
               decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.background,
+                  color: Colors.white,
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(25),
                       topRight: Radius.circular(25))),
@@ -44,14 +44,14 @@ class FaqScreen extends StatelessWidget {
                           style: GoogleFonts.poppins(
                               color: themeChange.getThem()
                                   ? Colors.black
-                                  : Colors.white,
+                                  : Colors.black,
                               fontSize: 20,
                               fontWeight: FontWeight.w600)),
                       Text("Read FAQs solution".tr,
                           style: GoogleFonts.poppins(
                             color: themeChange.getThem()
                                 ? Colors.black
-                                : Colors.white,
+                                :  Colors.black,
                           )),
                       const SizedBox(
                         height: 20,
@@ -86,7 +86,7 @@ class FaqScreen extends StatelessWidget {
                                                     ? AppColors
                                                         .containerBackground
                                                     : AppColors
-                                                        .darkContainerBackground,
+                                                    .containerBackground,
                                                 borderRadius:
                                                     const BorderRadius.all(
                                                         Radius.circular(10)),
@@ -95,33 +95,24 @@ class FaqScreen extends StatelessWidget {
                                                         ? AppColors
                                                             .darkContainerBorder
                                                         : AppColors
-                                                            .containerBorder,
+                                                        .darkContainerBorder,
                                                     width: 0.5),
                                                 boxShadow: themeChange.getThem()
                                                     ? null
-                                                    : [
-                                                        BoxShadow(
-                                                          color: Colors.grey
-                                                              .withOpacity(0.5),
-                                                          blurRadius: 8,
-                                                          offset: const Offset(
-                                                              0,
-                                                              2), // changes position of shadow
-                                                        ),
-                                                      ],
+                                                    : null
                                               ),
                                               child: ExpansionTile(
                                                 collapsedIconColor:
                                                     themeChange.getThem()
                                                         ? Colors.black
-                                                        : Colors.white,
+                                                        : Colors.black,
                                                 title: Text(
                                                     faqModel.title.toString(),
                                                     style: GoogleFonts.poppins(
                                                       color:
                                                           themeChange.getThem()
                                                               ? Colors.black
-                                                              : Colors.white,
+                                                              : Colors.black,
                                                     )),
                                                 children: <Widget>[
                                                   ListTile(
@@ -133,7 +124,7 @@ class FaqScreen extends StatelessWidget {
                                                           color: themeChange
                                                                   .getThem()
                                                               ? Colors.black
-                                                              : Colors.white,
+                                                              : Colors.black,
                                                         )),
                                                   ),
                                                 ],
